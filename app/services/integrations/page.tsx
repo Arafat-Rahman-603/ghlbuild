@@ -12,39 +12,54 @@ export const metadata: Metadata = {
 export default function IntegrationsPage() {
   return (
     <>
-      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 text-center relative overflow-hidden">
+      <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-surface relative overflow-hidden text-center">
+        <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-blue-100/30 rounded-bl-[150px] -z-10 blur-3xl" />
         <div className="container-page">
           <div className="flex flex-col items-center">
-            <span className="eyebrow mb-3 block w-fit">Integrations</span>
-            <h1 className="text-display mb-5">Connect GoHighLevel with the rest of your stack.</h1>
-            <p className="text-body-lg text-gray-500 max-w-2xl mb-8">
+            <h1 className="text-display max-w-4xl mb-6">
+              Connect GoHighLevel with the rest of your stack.
+            </h1>
+            <p className="text-body-lg max-w-2xl mb-10">
               Native integrations, Zapier and Make connections, API and webhook
               configurations — so GoHighLevel works as part of a connected system
               rather than an isolated tool.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href={site.cta.bookCall} className="btn btn-primary btn-lg">Book a Strategy Call</Link>
-              <Link href="/services" className="btn btn-outline btn-lg">All Services</Link>
+              <Link href={site.cta.bookCall} className="btn btn-primary btn-lg group">
+                <span>Book a Strategy Call</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
+              <Link href="/services" className="btn btn-outline btn-lg group">
+                <span>All Services</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-md bg-surface border-b border-gray-100">
+      <section className="section-md bg-surface">
         <div className="container-page">
-          <h2 className="text-headline mb-8">Integration types we implement.</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200 rounded-xl overflow-hidden">
+          <div className="mb-12 text-center max-w-3xl mx-auto">
+            <span className="eyebrow mb-3 block">Capabilities</span>
+            <h2 className="text-headline">
+              Integration types we implement.
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Native GHL Integrations", items: ["Email providers", "Payment processors", "Social platforms", "Google Business Profile", "Calendar platforms"] },
               { title: "Webhook & API", items: ["Inbound webhook configuration", "Outbound data push", "Custom API connections", "Third-party platform events", "Data synchronization"] },
               { title: "Automation Platforms", items: ["Zapier workflow setup", "Make (Integromat) scenarios", "n8n automation connections", "Multi-step automation flows"] },
             ].map((cat) => (
-              <div key={cat.title} className="bg-white p-6">
-                <h3 className="text-sm font-bold text-ink-900 mb-3 pb-3 border-b border-gray-100">{cat.title}</h3>
-                <ul className="flex flex-col gap-2">
+              <div key={cat.title} className="bg-white rounded-xl p-7 border border-neutral-200 shadow-sm hover:shadow-md hover:border-[#1e90ff]/30 transition-all duration-300 h-full flex flex-col group">
+                <h3 className="text-subtitle mb-5 pb-4 border-b border-gray-100 group-hover:border-blue-100 transition-colors">
+                  {cat.title}
+                </h3>
+                <ul className="flex flex-col gap-4">
                   {cat.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
-                      <svg aria-hidden className="w-3.5 h-3.5 mt-0.5 shrink-0 text-gray-400" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.75"><path d="M1.75 7l4.5 4.5 6-8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    <li key={item} className="flex items-start gap-3 text-body-sm">
+                      <svg aria-hidden className="w-5 h-5 mt-0.5 shrink-0 text-[#1e90ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                       {item}
                     </li>
                   ))}
@@ -52,7 +67,7 @@ export default function IntegrationsPage() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-caption text-gray-400">
+          <p className="mt-12 text-caption text-center text-gray-400">
             Feasibility of specific integrations depends on the tools involved — we assess during scoping.
           </p>
         </div>

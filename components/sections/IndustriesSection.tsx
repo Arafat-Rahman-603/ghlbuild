@@ -11,6 +11,7 @@ interface IndustryCardItem {
   name: string;
   description: string;
   workflows: string[];
+  icon: React.ReactNode;
 }
 
 const industryCards: IndustryCardItem[] = [
@@ -20,6 +21,12 @@ const industryCards: IndustryCardItem[] = [
     description:
       "Automated pipelines, lead generation, and booking for brokerages.",
     workflows: ["Intake", "Tours", "Contracts"],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    ),
   },
   {
     slug: "home-services",
@@ -27,6 +34,11 @@ const industryCards: IndustryCardItem[] = [
     description:
       "Booking automation, review requests, and job tracking for service teams.",
     workflows: ["Estimates", "Dispatch", "Reviews"],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+      </svg>
+    ),
   },
   {
     slug: "coaching-consulting",
@@ -34,6 +46,12 @@ const industryCards: IndustryCardItem[] = [
     description:
       "Course delivery, calendar booking, and nurture sequences for clients.",
     workflows: ["Discovery", "Onboarding", "Nurture"],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+        <rect width="20" height="14" x="2" y="6" rx="2" />
+      </svg>
+    ),
   },
   {
     slug: "digital-agencies",
@@ -41,6 +59,13 @@ const industryCards: IndustryCardItem[] = [
     description:
       "White-label GHL systems your clients use under your brand, end to end.",
     workflows: ["White-Label", "Deploy", "Reports"],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="20" height="14" x="2" y="3" rx="2" />
+        <line x1="8" x2="16" y1="21" y2="21" />
+        <line x1="12" x2="12" y1="17" y2="21" />
+      </svg>
+    ),
   },
   {
     slug: "healthcare",
@@ -48,6 +73,11 @@ const industryCards: IndustryCardItem[] = [
     description:
       "Patient communication workflows and appointment automation with high delivery.",
     workflows: ["Intake", "Reminders", "Follow-ups"],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+      </svg>
+    ),
   },
   {
     slug: "ecommerce",
@@ -55,6 +85,13 @@ const industryCards: IndustryCardItem[] = [
     description:
       "Abandoned cart recovery, SMS follow-ups, and post-purchase retention.",
     workflows: ["Carts", "SMS Promos", "Retention"],
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+        <path d="M3 6h18" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
+      </svg>
+    ),
   },
 ];
 
@@ -69,7 +106,7 @@ export function IndustriesSection() {
     >
       {/* Decorative ambient subtle accent dots from reference image */}
       <div
-        className="absolute top-12 left-1/4 w-2 h-2 rounded-full bg-emerald-400/40 pointer-events-none"
+        className="absolute top-12 left-1/4 w-2 h-2 rounded-full bg-blue-400/40 pointer-events-none"
         aria-hidden="true"
       />
       <div
@@ -123,23 +160,17 @@ export function IndustriesSection() {
             >
               <Link
                 href={`/industries/${card.slug}`}
-                className="relative group h-full bg-white rounded-[22px] sm:rounded-[24px] p-7 sm:p-8 border border-neutral-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
+                className="relative group h-full bg-white rounded-xl p-6 sm:p-7 border border-neutral-200/90 shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-[#1e90ff]/40 transition-all duration-300 flex flex-col gap-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e90ff]"
               >
                 <div className="flex-1 flex flex-col">
-                  {/* Top-Right Arrow */}
-                  <div className="absolute top-7 right-7 sm:top-8 sm:right-8">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-neutral-400 group-hover:text-neutral-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
-                      <svg
-                        viewBox="0 0 24 24"
-                        width="18"
-                        height="18"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden="true"
-                      >
+                  {/* Icon & Arrow Container */}
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#1e90ff] group-hover:scale-110 group-hover:bg-[#1e90ff] group-hover:text-white transition-all duration-300">
+                      {card.icon}
+                    </div>
+                    
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-neutral-400 group-hover:text-[#1e90ff] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <line x1="7" y1="17" x2="17" y2="7" />
                         <polyline points="7 7 17 7 17 17" />
                       </svg>
@@ -157,17 +188,6 @@ export function IndustriesSection() {
                   </p>
                 </div>
 
-                {/* Subtle Workflow Tags */}
-                <div className="pt-4 border-t border-neutral-100 flex flex-wrap gap-1.5 mt-auto">
-                  {card.workflows.map((wf, wIdx) => (
-                    <span
-                      key={wIdx}
-                      className="text-caption text-neutral-500 bg-neutral-100/80 px-2.5 py-1 rounded-md whitespace-nowrap"
-                    >
-                      {wf}
-                    </span>
-                  ))}
-                </div>
               </Link>
             </motion.div>
           ))}

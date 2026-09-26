@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/content/site";
 
@@ -14,11 +14,14 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-surface border-b border-gray-100 text-center">
+      <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-surface relative overflow-hidden text-center">
+        <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-blue-100/30 rounded-bl-[150px] -z-10 blur-3xl" />
         <div className="container-narrow">
-          <span className="eyebrow mb-3 block w-fit mx-auto">Legal</span>
-          <h1 className="text-display mb-3">Privacy Policy</h1>
-          <p className="text-body text-gray-500">
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#1e90ff] text-xs font-bold tracking-widest uppercase mb-6 shadow-sm mx-auto">
+            Legal
+          </span>
+          <h1 className="text-display mb-4">Privacy Policy</h1>
+          <p className="text-body-lg">
             Last updated: {lastUpdated}
           </p>
         </div>
@@ -123,7 +126,7 @@ export default function PrivacyPolicyPage() {
               </ul>
               <p className="mt-3">
                 To exercise any of these rights, please contact us at{" "}
-                <a href={`mailto:${site.email}`} className="text-ink-900 underline font-medium">
+                <a href={`mailto:${site.email}`} className="text-[#1e90ff] underline hover:no-underline font-medium">
                   {site.email}
                 </a>.
               </p>
@@ -141,18 +144,18 @@ export default function PrivacyPolicyPage() {
               <p className="mb-3">
                 If you have questions, concerns, or requests regarding this Privacy Policy, please contact our team:
               </p>
-              <div className="bg-surface p-6 rounded-lg border border-gray-200 flex flex-col gap-2">
-                <p className="font-bold text-ink-900">{site.name}</p>
-                <p className="text-sm text-gray-500">GoHighLevel Implementation & Business Automation</p>
-                <p className="text-sm">
+              <div className="bg-surface p-8 rounded-[24px] border border-gray-100 shadow-sm flex flex-col gap-2">
+                <p className="font-bold text-ink-900 text-lg">{site.name}</p>
+                <p className="text-body-sm mb-2">GoHighLevel Implementation & Business Automation</p>
+                <p className="text-[15px]">
                   Email:{" "}
-                  <a href={`mailto:${site.email}`} className="text-accent underline">
+                  <a href={`mailto:${site.email}`} className="text-[#1e90ff] hover:underline">
                     {site.email}
                   </a>
                 </p>
-                <p className="text-sm">
+                <p className="text-[15px]">
                   Website:{" "}
-                  <a href={site.url} className="text-accent underline">
+                  <a href={site.url} className="text-[#1e90ff] hover:underline">
                     {site.url}
                   </a>
                 </p>

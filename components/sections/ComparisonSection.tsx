@@ -23,55 +23,56 @@ function CheckNo() {
 function CellValue({ value }: { value: string | boolean }) {
   if (value === true) return <CheckYes />;
   if (value === false) return <CheckNo />;
-  return <span className="text-xs text-gray-500">{value}</span>;
+  return <span className="text-body-sm font-medium text-gray-600">{value}</span>;
 }
 
 export function ComparisonSection() {
   return (
     <section
-      className="section-md bg-white border-b border-gray-100"
+      className="section-md bg-surface"
       aria-labelledby="comparison-heading"
     >
       <div className="container-page">
-        <div className="mb-10 text-center">
-          <span className="eyebrow mb-3 block w-fit mx-auto">Comparison</span>
+        <div className="mb-16 text-center max-w-3xl mx-auto">
+          <span className="eyebrow mb-3 block">Comparison</span>
           <h2 id="comparison-heading" className="text-headline">
             DIY vs. generic setup vs. professional implementation.
           </h2>
-          {/* <p className="text-body text-gray-500 mt-3">
-            Every setup approach produces a different outcome. Here&apos;s how they
-            compare across the dimensions that matter for business operations.
-          </p> */}
         </div>
 
-        {/* Responsive table wrapper */}
-        <div className="overflow-x-auto -mx-5 px-5 sm:mx-0 sm:px-0">
-          <table className="comparison-table" aria-label="Implementation approach comparison">
+        {/* Premium responsive table wrapper */}
+        <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-xl bg-white relative">
+          <table className="w-full text-left" aria-label="Implementation approach comparison">
             <thead>
-              <tr>
-                <th scope="col" className="w-1/3 sm:w-auto">
+              <tr className="border-b border-gray-200">
+                <th scope="col" className="p-6 lg:p-8 w-1/3 sm:w-auto text-lg font-bold text-ink-900 bg-gray-50/50">
                   Feature
                 </th>
-                <th scope="col">DIY</th>
-                <th scope="col">Generic Setup</th>
-                <th scope="col" className="col-highlight">
+                <th scope="col" className="p-6 lg:p-8 text-sm font-bold uppercase tracking-wider text-gray-500 text-center bg-white">
+                  DIY
+                </th>
+                <th scope="col" className="p-6 lg:p-8 text-sm font-bold uppercase tracking-wider text-gray-500 text-center bg-white border-l border-r border-gray-100">
+                  Generic Setup
+                </th>
+                <th scope="col" className="p-6 lg:p-8 text-sm font-bold uppercase tracking-wider text-white text-center bg-ink-900 relative">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-[#1e90ff]" />
                   Professional Implementation
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="divide-y divide-gray-100">
               {comparisonRows.map((row) => (
-                <tr key={row.feature}>
-                  <th scope="row" className="text-sm font-medium text-ink-900 text-left">
+                <tr key={row.feature} className="hover:bg-blue-50/20 transition-colors">
+                  <th scope="row" className="p-5 lg:p-6 text-sm font-bold text-ink-900 bg-gray-50/50">
                     {row.feature}
                   </th>
-                  <td>
+                  <td className="p-5 lg:p-6 text-center">
                     <CellValue value={row.diy} />
                   </td>
-                  <td>
+                  <td className="p-5 lg:p-6 text-center border-l border-r border-gray-100 bg-gray-50/20">
                     <CellValue value={row.generic} />
                   </td>
-                  <td className="col-highlight">
+                  <td className="p-5 lg:p-6 text-center bg-ink-900/[0.02]">
                     <CellValue value={row.professional} />
                   </td>
                 </tr>

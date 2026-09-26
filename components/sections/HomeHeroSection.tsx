@@ -58,11 +58,14 @@ const trustIndicators = [
 
 export function HomeHeroSection() {
   return (
+    <>
     <section
-      className="pt-12 pb-10 md:pt-16 md:pb-12 border-b border-gray-200 overflow-hidden"
-      style={{ backgroundColor: "#f5f4f0" }}
+      className="pt-16 md:pt-24 overflow-hidden relative"
+      style={{ backgroundColor: "#f8f8f6" }}
       aria-labelledby="home-hero-heading"
     >
+      {/* Subtle ambient glow behind text */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#1e90ff] opacity-[0.04] blur-[120px] rounded-full pointer-events-none" />
       <div className="container-page">
         <motion.div
           initial="hidden"
@@ -78,20 +81,20 @@ export function HomeHeroSection() {
             className="text-display max-w-[820px] mb-4"
           >
             Hire GoHighLevel{" "}
-            {/* Highlighted word — mint background, editorial treatment */}
+            {/* Highlighted word — blue background, editorial treatment */}
             <span className="relative inline-block">
               <span
                 aria-hidden="true"
                 className="absolute rounded"
                 style={{
                   inset: "4px -6px 0px -6px",
-                  backgroundColor: "#22c55e",
-                  opacity: 0.28,
+                  backgroundColor: "#1e90ff",
+                  opacity: 0.15,
                   borderRadius: "6px",
                   zIndex: 0,
                 }}
               />
-              <span className="relative" style={{ zIndex: 1 }}>experts</span>
+              <span className="relative text-[#1e90ff]" style={{ zIndex: 1 }}>experts</span>
             </span>{" "}
             who can turn{" "}
             <br className="hidden sm:block" />
@@ -131,40 +134,82 @@ export function HomeHeroSection() {
             </Link>
           </motion.div>
 
-          {/* Trust bar — horizontal with pipe separators */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap justify-center items-center gap-x-5 gap-y-3"
-          >
-            {trustIndicators.map((item, i) => (
-              <React.Fragment key={item.label}>
-                <div className="flex items-center gap-2 text-caption">
-                  {item.icon}
-                  {item.label}
-                </div>
-                {i < trustIndicators.length - 1 && (
-                  <span
-                    aria-hidden="true"
-                    className="hidden sm:block text-gray-300 select-none"
-                  >
-                    |
-                  </span>
-                )}
-              </React.Fragment>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
-      {/* Highlight Video */}
-      <div className="relative w-full max-w-7xl mx-auto rounded-2xl overflow-hidden shadow-2xl my-12 aspect-video bg-black border border-gray-200/50">
-        <iframe 
-          src="https://www.youtube.com/embed/e8wFXikidSM?rel=0"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowFullScreen
-          className="absolute inset-0 w-full h-full border-0"
-        ></iframe>
+    </section>
+     
+    <section className="pt-8 pb-8 bg-white overflow-hidden relative border-b border-gray-200">
+      <div className="container-page flex flex-col items-center gap-10">
+        
+        {/* Top Row: Review Badges */}
+        <div className="flex flex-wrap justify-center items-center gap-5">
+          
+          {/* Trustpilot */}
+          <div className="flex items-center gap-3.5 bg-white border border-gray-200 shadow-sm px-6 py-3.5 rounded-xl">
+            <svg viewBox="0 0 24 24" className="w-7 h-7 text-[#00b67a] fill-current" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <div className="flex flex-col">
+              <span className="text-[11px] text-gray-500 font-medium">Excellent 4.9/5</span>
+              <span className="font-bold text-sm text-ink-900">Trustpilot</span>
+            </div>
+          </div>
+
+          {/* Google Review */}
+          <div className="flex items-center gap-3.5 bg-white border border-gray-200 shadow-sm px-6 py-3.5 rounded-xl">
+            <svg viewBox="0 0 24 24" className="w-7 h-7 text-[#fbbc05] fill-current" aria-hidden="true">
+              <path d="M21.35 11.1H12v2.77h5.44c-.25 1.4-1.55 4.12-5.44 4.12-3.28 0-5.95-2.73-5.95-6.1s2.67-6.1 5.95-6.1c1.86 0 3.19.8 3.92 1.49l2.21-2.14C16.54 3.75 14.47 2.9 12 2.9 6.98 2.9 2.9 6.98 2.9 12s4.08 9.1 9.1 9.1c5.25 0 8.73-3.69 8.73-8.89 0-.75-.1-1.39-.23-1.93z" />
+            </svg>
+            <div className="flex flex-col">
+              <span className="text-[11px] text-gray-500 font-medium">Excellent 4.8/5</span>
+              <span className="font-bold text-sm text-ink-900">Google</span>
+            </div>
+          </div>
+
+          {/* Clutch Review */}
+          <div className="flex items-center gap-3.5 bg-white border border-gray-200 shadow-sm px-6 py-3.5 rounded-xl">
+            <svg viewBox="0 0 24 24" className="w-7 h-7 text-[#ff3a2d] fill-current" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 17.5c-4.14 0-7.5-3.36-7.5-7.5S7.86 4.5 12 4.5s7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5zm-1.5-4h3v-2h-3v2zm0-4h3V8h-3v3z" />
+            </svg>
+            <div className="flex flex-col">
+              <span className="text-[11px] text-gray-500 font-medium">Excellent 4.8/5</span>
+              <span className="font-bold text-sm text-ink-900">Clutch</span>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Row: Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 w-full max-w-4xl mx-auto">
+          
+          {/* Stat 1 */}
+          <div className="flex flex-col items-center md:border-r border-gray-200">
+            <span className="text-4xl md:text-5xl font-bold text-ink-900 tracking-tight mb-1">1,200+</span>
+            <span className="text-[13px] font-medium text-gray-500">Clients Served</span>
+          </div>
+
+          {/* Stat 2 */}
+          <div className="flex flex-col items-center md:border-r border-gray-200">
+            <span className="text-4xl md:text-5xl font-bold text-ink-900 tracking-tight mb-1">5,000+</span>
+            <span className="text-[13px] font-medium text-gray-500">Projects Completed</span>
+          </div>
+
+          {/* Stat 3 */}
+          <div className="flex flex-col items-center md:border-r border-gray-200">
+            <span className="text-4xl md:text-5xl font-bold text-ink-900 tracking-tight mb-1">7+</span>
+            <span className="text-[13px] font-medium text-gray-500">Years of Experience</span>
+          </div>
+
+          {/* Stat 4 */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl md:text-5xl font-bold text-ink-900 tracking-tight mb-1">100%</span>
+            <span className="text-[13px] font-medium text-gray-500">Satisfaction Focus</span>
+          </div>
+
+        </div>
+
       </div>
     </section>
+  </>
   );
 }

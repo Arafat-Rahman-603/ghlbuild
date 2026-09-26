@@ -1,43 +1,44 @@
-import { ghlProblems } from "@/lib/content/ghl-setup";
+﻿import { ghlProblems } from "@/lib/content/ghl-setup";
 
 export function ProblemSection() {
   const { heading, intro, problems } = ghlProblems;
 
   return (
     <section
-      className="section-md bg-surface border-b border-gray-100"
+      className="section-md bg-white"
       aria-labelledby="problem-heading"
     >
       <div className="container-page">
-        <div className="mb-12 text-center">
-          <h2 id="problem-heading" className="text-headline mb-4">
+        <div className="mb-16 max-w-3xl">
+          <h2 id="problem-heading" className="text-headline mb-6">
             {heading}
           </h2>
-          <p className="text-body text-gray-500">{intro}</p>
+          <p className="text-body-lg leading-relaxed">{intro}</p>
         </div>
 
-        {/* Problem list — alternating vertical editorial layout */}
-        <div className="flex flex-col divide-y divide-gray-200">
+        {/* Problem list — modernized grid layout */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {problems.map((problem, i) => (
             <div
               key={problem.label}
-              className="grid lg:grid-cols-[48px_240px_1fr] gap-4 lg:gap-8 py-7 items-start"
+              className="bg-gray-50 border border-gray-100 rounded-xl p-8 hover:bg-white hover:shadow-xl hover:border-gray-200 transition-all duration-300 relative group overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-700" />
               {/* Number */}
               <span
-                className="text-sm font-medium tabular-nums text-gray-400 pt-0.5 select-none"
+                className="text-4xl font-black text-gray-200 mb-6 block group-hover:text-blue-100 transition-colors"
                 aria-hidden="true"
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
 
               {/* Label */}
-              <h3 className="text-sm font-semibold text-ink-900 leading-snug">
+              <h3 className="text-subtitle leading-snug mb-3">
                 {problem.label}
               </h3>
 
               {/* Body */}
-              <p className="text-body text-gray-500">{problem.body}</p>
+              <p className="text-gray-500 leading-relaxed">{problem.body}</p>
             </div>
           ))}
         </div>

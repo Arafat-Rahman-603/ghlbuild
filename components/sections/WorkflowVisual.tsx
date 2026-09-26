@@ -1,4 +1,4 @@
-const WORKFLOW_STEPS = [
+﻿const WORKFLOW_STEPS = [
   {
     id: "trigger",
     label: "Trigger",
@@ -69,23 +69,18 @@ const labelColors: Record<string, string> = {
 export function WorkflowVisual() {
   return (
     <section
-      className="section-md bg-white border-b border-gray-100"
+      className="section-md bg-white border-b border-gray-100 overflow-hidden"
       aria-labelledby="workflow-heading"
     >
       <div className="container-page">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: copy */}
           <div>
-            <span className="eyebrow mb-3 block w-fit">Automation</span>
-            <h2 id="workflow-heading" className="text-headline mb-4">
+            <span className="eyebrow mb-3 block">Automation Architecture</span>
+            <h2 id="workflow-heading" className="text-headline mb-8">
               Automation that runs your follow-up process reliably.
             </h2>
-            {/* <p className="text-body text-gray-500 mb-6">
-              Every workflow is built around your specific lead flow — triggers,
-              conditions, timing, and actions configured to match how your
-              business handles new leads, appointments, and follow-up.
-            </p> */}
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-5">
               {[
                 "Lead follow-up within minutes, not days",
                 "Conditional routing based on source and response",
@@ -95,18 +90,18 @@ export function WorkflowVisual() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-2.5 text-sm text-gray-500"
+                  className="flex items-start gap-4 text-gray-600 font-medium text-lg"
                 >
                   <svg
                     aria-hidden="true"
-                    className="w-3.5 h-3.5 mt-0.5 shrink-0 text-ink-900"
-                    viewBox="0 0 14 14"
+                    className="w-6 h-6 mt-0.5 shrink-0 text-[#1e90ff]"
+                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.75"
+                    strokeWidth="2.5"
                   >
                     <path
-                      d="M1.75 7l4.5 4.5 6-8"
+                      d="M20 6L9 17l-5-5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -117,43 +112,53 @@ export function WorkflowVisual() {
             </ul>
           </div>
 
-          {/* Right: workflow diagram */}
+          {/* Right: premium workflow diagram */}
           <div
             role="img"
             aria-label="Fictional automation workflow diagram showing lead follow-up steps"
             className="relative"
           >
-            <div className="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
+            <div className="absolute inset-0 bg-blue-50/50 rounded-full blur-3xl -z-10" />
+            
+            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-2xl relative">
               {/* Toolbar */}
-              <div className="flex items-center gap-2 px-4 py-2.5 border-b border-gray-200 bg-white">
-                <div className="w-2 h-2 rounded-full bg-blue-400" />
-                <span className="text-xs font-semibold text-ink-900">
-                  Lead Follow-up Workflow
-                </span>
-                <span className="ml-auto text-[10px] text-green-600 font-medium">
-                  Active
+              <div className="flex items-center justify-between px-8 py-5 border-b border-gray-100 bg-gray-50/50">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-blue-500 shadow-sm shadow-blue-500/50 animate-pulse" />
+                  <span className="text-sm font-bold text-ink-900 uppercase tracking-widest">
+                    Lead Follow-up Workflow
+                  </span>
+                </div>
+                <span className="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-bold uppercase tracking-widest">
+                  Live
                 </span>
               </div>
 
               {/* Nodes */}
-              <div className="p-4 flex flex-col gap-0">
+              <div className="p-8 flex flex-col gap-0 max-h-[500px] overflow-y-auto custom-scrollbar">
                 {WORKFLOW_STEPS.map((step, index) => (
-                  <div key={step.id}>
+                  <div key={step.id} className="relative group">
                     {/* Node */}
                     <div
-                      className={`rounded-md border border-gray-200 p-3 flex items-center gap-3 ${typeStyles[step.type]}`}
+                      className={`relative z-10 rounded-2xl border border-gray-200 p-5 flex items-center gap-5 transition-all duration-300 hover:shadow-lg bg-white overflow-hidden`}
                     >
+                      {/* Left color bar */}
+                      <div className={`absolute left-0 top-0 bottom-0 w-2 ${typeStyles[step.type].split(' ')[0]}`} />
+                      
                       {/* Label badge */}
                       <span
-                        className={`text-[9px] font-semibold uppercase tracking-wider shrink-0 ${labelColors[step.type]}`}
+                        className={`text-[10px] font-black uppercase tracking-widest shrink-0 w-24 text-right ${labelColors[step.type]}`}
                       >
                         {step.label}
                       </span>
+                      
+                      <div className="w-px h-10 bg-gray-100 shrink-0 mx-2" />
+                      
                       <div className="flex-1 min-w-0">
-                        <p className="text-xs font-semibold text-ink-900 leading-tight">
+                        <p className="text-sm font-bold text-ink-900 mb-1">
                           {step.title}
                         </p>
-                        <p className="text-[10px] text-gray-400 mt-0.5">
+                        <p className="text-xs text-gray-500 font-medium">
                           {step.detail}
                         </p>
                       </div>
@@ -161,17 +166,15 @@ export function WorkflowVisual() {
 
                     {/* Connector */}
                     {index < WORKFLOW_STEPS.length - 1 && (
-                      <div className="flex items-center justify-start ml-6 py-0.5">
-                        <div className="w-px h-4 bg-gray-300" aria-hidden="true" />
+                      <div className="flex items-center justify-center h-10 relative">
+                        <div className="absolute top-0 bottom-0 w-0.5 bg-gray-200 group-hover:bg-blue-200 transition-colors" aria-hidden="true" />
                         <svg
                           aria-hidden="true"
-                          className="text-gray-300 -ml-[4.5px] mt-auto"
-                          width="9"
-                          height="5"
-                          viewBox="0 0 9 5"
+                          className="absolute bottom-0 text-gray-300 group-hover:text-blue-300 transition-colors w-3 h-3 translate-y-1"
+                          viewBox="0 0 24 24"
                           fill="currentColor"
                         >
-                          <path d="M4.5 5L0 0h9z" />
+                          <path d="M12 21l-12-18h24z" />
                         </svg>
                       </div>
                     )}
@@ -180,7 +183,7 @@ export function WorkflowVisual() {
               </div>
             </div>
 
-            <p className="mt-2 text-caption text-center text-gray-400">
+            <p className="mt-6 text-sm font-medium text-center text-gray-400">
               Fictional demonstration — illustrative of a typical workflow
             </p>
           </div>

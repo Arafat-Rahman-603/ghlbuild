@@ -121,60 +121,86 @@ export function GhlHero() {
 
   return (
     <section
-      className="pt-12 pb-12 md:pt-16 md:pb-16 bg-white border-b border-gray-100"
+      className="pt-16 pb-16 md:pt-24 md:pb-24 bg-white relative overflow-hidden"
       aria-labelledby="hero-heading"
     >
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-50/30 rounded-bl-[120px] -z-10" />
       <div className="container-page">
-        <div className="grid lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_520px] gap-12 xl:gap-16 items-start">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
           {/* Left: copy */}
           <div>
-            <span className="eyebrow mb-5 block w-fit">{eyebrow}</span>
             <h1
               id="hero-heading"
-              className="text-display mb-5"
+              className="text-display mb-6"
             >
               {headline}
             </h1>
-            <p className="text-body-lg mb-8 text-gray-500">
+            <p className="text-body-lg mb-10 leading-relaxed max-w-2xl">
               {subheadline}
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <Link href={primaryCta.href} className="btn btn-primary btn-lg">
-                {primaryCta.label}
+            <div className="flex flex-wrap gap-3 mb-10">
+              <Link href={primaryCta.href} className="btn btn-primary btn-lg group">
+                <span>{primaryCta.label}</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
               </Link>
-              <Link href={secondaryCta.href} className="btn btn-outline btn-lg">
-                {secondaryCta.label}
+              <Link href={secondaryCta.href} className="btn btn-outline btn-lg group">
+                <span>{secondaryCta.label}</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
               </Link>
             </div>
 
-            {/* Trust indicators */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
-              {trustIndicators.map((indicator) => (
-                <div
-                  key={indicator}
-                  className="flex items-center gap-2 text-caption font-medium text-gray-500"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="w-3.5 h-3.5 text-ink-900 shrink-0"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M2 7l4 4 6-7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  {indicator}
+            {/* Trust row */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-8 border-t border-gray-100">
+              <div className="flex flex-col gap-2">
+                <div className="flex gap-1 text-[#1e90ff]">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
                 </div>
-              ))}
+                <span className="eyebrow text-gray-900">Trusted Implementation Partner</span>
+              </div>
+              
+              <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
+              
+              <div className="flex flex-wrap gap-x-6 gap-y-3">
+                {trustIndicators.slice(0, 3).map((indicator) => (
+                  <div
+                    key={indicator}
+                    className="flex items-center gap-2 text-sm font-semibold text-gray-600"
+                  >
+                    <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                      <svg
+                        aria-hidden="true"
+                        className="w-3 h-3 text-[#1e90ff]"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                      >
+                        <path d="M2 7l4 4 6-7" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                    {indicator}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Right: product visual */}
-          <div className="lg:pt-2">
-            <CrmDashboardVisual />
+          <div className="relative">
+             <div className="aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 shadow-2xl relative group bg-white">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" 
+                  alt="GoHighLevel System Architecture"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1000 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+             </div>
           </div>
         </div>
       </div>

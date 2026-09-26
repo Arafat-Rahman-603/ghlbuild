@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import { site } from "@/lib/content/site";
@@ -18,46 +18,58 @@ const whatToExpect = [
 
 export default function BookACallPage() {
   return (
-    <div className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white">
+    <div className="pt-20 pb-16 md:pt-32 md:pb-24 bg-surface relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-blue-100/30 rounded-bl-[150px] -z-10 blur-3xl" />
       <div className="container-page">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left */}
           <div>
-            <span className="eyebrow mb-4 block w-fit">Strategy Call</span>
-            <h1 className="text-display mb-5">Book a strategy call.</h1>
-            <p className="text-body-lg text-gray-500 mb-8">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#1e90ff] text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              Strategy Call
+            </span>
+            <h1 className="text-display mb-6">
+              Book a strategy call.
+            </h1>
+            <p className="text-body-lg mb-12 leading-relaxed">
               A focused call to understand your business, identify what needs
               to be implemented, and outline a clear plan. No commitment
               required.
             </p>
 
-            <div className="flex flex-col gap-5">
-              <h2 className="text-title">What we cover on the call.</h2>
-              {whatToExpect.map((item) => (
-                <div key={item.title} className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full border-2 border-gray-200 flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="w-2 h-2 rounded-full bg-ink-900" />
+            <div className="flex flex-col gap-6">
+              <h2 className="text-subtitle">What we cover on the call.</h2>
+              <div className="space-y-6">
+                {whatToExpect.map((item) => (
+                  <div key={item.title} className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#1e90ff]" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-ink-900 mb-1">{item.title}</h3>
+                      <p className="text-gray-500 leading-relaxed">{item.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-ink-900">{item.title}</h3>
-                    <p className="text-body text-gray-500">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Right: booking area */}
           <div>
-            <div className="card card-padded">
-              <h2 className="text-title mb-3">Schedule your call.</h2>
-              <p className="text-body text-gray-500 mb-6">
+            <div className="bg-white rounded-2xl p-8 lg:p-10 border border-gray-200 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-full -z-10" />
+              <h2 className="text-subtitle mb-3">Schedule your call.</h2>
+              <p className="text-gray-500 mb-8">
                 Select a time below to book directly into our calendar, or
                 contact us by email if you have questions first.
               </p>
 
               {/* LeadConnector Booking Integration */}
-              <div className="w-full overflow-hidden mb-6 rounded-lg">
+              <div className="w-full overflow-hidden mb-8 rounded-[24px] border border-gray-100 bg-gray-50/50">
                 <iframe
                   src="https://api.leadconnectorhq.com/widget/booking/DbOkfvXLIusWWUTgIxMK"
                   style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "650px" }}
@@ -70,14 +82,14 @@ export default function BookACallPage() {
                 />
               </div>
 
-              <div className="flex flex-col gap-2">
-                <Link href={site.cta.contact} className="btn btn-outline w-full justify-center">
+              <div className="flex flex-col gap-3">
+                <Link href={site.cta.contact} className="btn btn-outline btn-lg w-full justify-center">
                   Contact by email instead
                 </Link>
                 {site.email && (
-                  <p className="text-center text-caption text-gray-400">
+                  <p className="text-center text-sm font-medium text-gray-500 mt-2">
                     Or email us directly at{" "}
-                    <a href={`mailto:${site.email}`} className="text-ink-900 underline underline-offset-2">
+                    <a href={`mailto:${site.email}`} className="text-[#1e90ff] hover:underline underline-offset-4">
                       {site.email}
                     </a>
                   </p>

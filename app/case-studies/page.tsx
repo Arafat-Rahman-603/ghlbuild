@@ -28,7 +28,7 @@ export default function CaseStudiesPage() {
       ],
       outcome: "Response time dropped to 5 minutes. 40% more leads entered the qualification stage without any manual effort.",
       tags: ["Workflow Automation", "Pipeline CRM", "SMS Integration"],
-      href: "/contact",
+      href: "/case-studies/scaling-lead-volume-automated-triage",
     },
     {
       id: "cs-2",
@@ -45,7 +45,7 @@ export default function CaseStudiesPage() {
       ],
       outcome: "No-shows dropped from 25% to 5%. The firm saved hours of wasted preparation time per week.",
       tags: ["Calendar & Booking", "Email Sequences", "Forms"],
-      href: "/contact",
+      href: "/case-studies/eliminating-no-shows",
     },
     {
       id: "cs-3",
@@ -62,24 +62,23 @@ export default function CaseStudiesPage() {
       ],
       outcome: "Saved $8,500 annually in software costs and eliminated data silos. The entire team now works from one dashboard.",
       tags: ["Migration", "System Consolidation", "Integrations"],
-      href: "/contact",
+      href: "/case-studies/consolidating-software-subscriptions",
     }
   ];
 
   return (
     <>
-      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 overflow-hidden relative text-center">
-        <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-b from-surface to-white -z-10" />
+      <section className="pt-20 md:pt-32 pb-8 bg-surface relative overflow-hidden text-center">
+        <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-blue-100/30 rounded-bl-[150px] -z-10 blur-3xl" />
         <div className="container-page">
           <AnimatedStagger className="max-w-3xl mx-auto flex flex-col items-center">
             <AnimatedItem>
-              <span className="eyebrow mb-4 block w-fit">Case Studies</span>
+              <h1 className="text-display mb-6 max-w-4xl">
+                Implementation in practice.
+              </h1>
             </AnimatedItem>
             <AnimatedItem>
-              <h1 className="text-display mb-6">Implementation in practice.</h1>
-            </AnimatedItem>
-            <AnimatedItem>
-              <p className="text-body-lg text-gray-500">
+              <p className="text-body-lg max-w-2xl">
                 Sample implementations demonstrating how we scope, architect, and build technical GoHighLevel ecosystems to solve real operational bottlenecks.
               </p>
             </AnimatedItem>
@@ -89,74 +88,44 @@ export default function CaseStudiesPage() {
 
       <section className="section-md bg-surface border-b border-gray-100">
         <div className="container-page">
-          <AnimatedStagger className="grid gap-16 lg:gap-24">
+          <AnimatedStagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((cs) => (
               <AnimatedItem key={cs.id}>
-                <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm flex flex-col">
-                  {/* Top Bar / Visual Area */}
-                  <div className="bg-gray-100 border-b border-gray-200 p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
-                     <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-                     <div className="relative z-10">
-                        <span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4 inline-block">Demo Case Study</span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-ink-900 mb-2">{cs.title}</h2>
-                        <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500">
-                           <span className="font-semibold text-ink-900">{cs.client}</span>
-                           <span className="w-1 h-1 rounded-full bg-gray-300" />
-                           <span>{cs.industry}</span>
-                        </div>
-                     </div>
-                     <div className="relative z-10 shrink-0 bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center min-w-[200px]">
-                        <span className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Key Outcome</span>
-                        <span className="block text-2xl font-black text-accent">{cs.metric}</span>
-                     </div>
-                  </div>
-
-                  {/* Content Grid */}
-                  <div className="grid lg:grid-cols-2 gap-px bg-gray-100">
-                    {/* Left Column */}
-                    <div className="bg-white p-8 md:p-12">
-                      <div className="mb-10">
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">The Challenge</h3>
-                        <p className="text-body text-gray-600">{cs.challenge}</p>
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">The Solution</h3>
-                        <p className="text-body text-gray-600">{cs.solution}</p>
-                      </div>
-                    </div>
-
-                    {/* Right Column */}
-                    <div className="bg-white p-8 md:p-12 flex flex-col h-full">
-                      <div className="mb-10">
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4">Implementation Details</h3>
-                        <ul className="flex flex-col gap-3">
-                          {cs.implementation.map((item, i) => (
-                             <li key={i} className="flex items-start gap-3">
-                                <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5 opacity-80" />
-                                <span className="text-body text-gray-600">{item}</span>
-                             </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div className="mt-auto pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                        <div className="flex flex-wrap gap-2">
-                          {cs.tags.map(tag => (
-                            <span key={tag} className="text-xs font-semibold text-gray-500 bg-surface border border-gray-200 px-2 py-1 rounded-md">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        <Link 
-                          href={cs.href}
-                          className="inline-flex items-center gap-2 text-sm font-bold text-ink-900 hover:text-accent transition-colors shrink-0 group/btn"
-                        >
-                          Discuss a similar setup
-                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </Link>
-                      </div>
+                <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group overflow-hidden">
+                  
+                  {/* Top visual accent */}
+                  <div className="h-32 bg-surface relative overflow-hidden flex items-center justify-center p-6 border-b border-gray-100">
+                    <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+                    <div className="relative z-10 text-center">
+                       <span className="eyebrow block mb-1 text-[#1e90ff]">Key Outcome</span>
+                       <span className="block text-2xl font-black text-ink-900">{cs.metric}</span>
                     </div>
                   </div>
+
+                  {/* Content */}
+                  <div className="p-8 flex flex-col flex-1">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="text-xs font-bold uppercase tracking-wider text-gray-500 bg-gray-50 px-2 py-1 rounded-md">{cs.industry}</span>
+                      <span className="text-xs font-bold uppercase tracking-wider text-gray-500 bg-gray-50 px-2 py-1 rounded-md">{cs.client}</span>
+                    </div>
+                    
+                    <h2 className="text-xl font-bold text-ink-900 mb-4 line-clamp-2">{cs.title}</h2>
+                    
+                    <p className="text-body-sm text-gray-600 mb-8 line-clamp-3 flex-1">
+                      {cs.challenge}
+                    </p>
+                    
+                    <div className="mt-auto pt-6 border-t border-gray-100">
+                      <Link 
+                        href={cs.href}
+                        className="inline-flex items-center gap-2 text-sm font-bold text-[#1e90ff] group-hover:text-blue-700 transition-colors group/btn w-full justify-between"
+                      >
+                        Read case study
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+
                 </div>
               </AnimatedItem>
             ))}

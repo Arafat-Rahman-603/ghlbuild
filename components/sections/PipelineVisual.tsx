@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 
@@ -46,60 +46,54 @@ export function PipelineVisual() {
 
   return (
     <section
-      className="section-md bg-surface border-b border-gray-100 overflow-hidden"
+      className="section-md bg-surface overflow-hidden"
       aria-labelledby="pipeline-heading"
     >
       <div className="container-page">
-        <div className="mb-8">
-          <span className="eyebrow mb-3 block w-fit">CRM Pipeline</span>
+        <div className="mb-12 max-w-3xl">
+          <span className="eyebrow mb-3 block">CRM Pipeline</span>
           <h2 id="pipeline-heading" className="text-headline">
             A pipeline that maps to your actual sales process.
           </h2>
-          {/* <p className="text-body text-gray-500 mt-3">
-            Custom stages, opportunity values, lead sources, and activity
-            tracking — configured to reflect how your business actually closes
-            deals, not a default template.
-          </p> */}
         </div>
 
-        {/* Pipeline UI */}
+        {/* Premium Pipeline UI */}
         <div
-          className="rounded-xl border border-gray-200 bg-white overflow-hidden"
+          className="rounded-xl border border-gray-200 shadow-xl bg-white overflow-hidden p-6 lg:p-10"
           role="img"
           aria-label="Fictional CRM pipeline interface showing contact stages"
         >
           {/* Toolbar */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50">
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-semibold text-ink-900">Sales Pipeline</span>
-              <span className="text-xs text-gray-400">|</span>
-              <span className="text-xs text-gray-400">Q3 2024</span>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div className="flex items-center gap-4">
+              <span className="text-subtitle">Sales Pipeline</span>
+              <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-wider">Q3 2024</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-gray-400">8 open opportunities</span>
-              <span className="text-xs text-green-600 font-medium">
+            <div className="flex items-center gap-4">
+              <span className="text-sm font-semibold text-gray-500">8 active deals</span>
+              <span className="px-4 py-2 bg-green-50 text-green-600 rounded-full text-sm font-bold shadow-sm">
                 $47,100 pipeline
               </span>
             </div>
           </div>
 
           {/* Kanban columns */}
-          <div className="grid grid-cols-4 divide-x divide-gray-100 min-h-[280px] overflow-x-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {STAGES.map((stage) => (
-              <div key={stage.id} className="p-3 flex flex-col gap-2 min-w-[160px]">
+              <div key={stage.id} className="flex flex-col gap-4 bg-gray-50/50 p-4 rounded-2xl border border-gray-100">
                 {/* Stage header */}
-                <div className="flex items-center justify-between mb-1">
-                  <div className="flex items-center gap-1.5">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
                     <span
-                      className="w-2 h-2 rounded-full shrink-0"
+                      className="w-3 h-3 rounded-full shadow-sm"
                       style={{ backgroundColor: stage.color }}
                       aria-hidden="true"
                     />
-                    <span className="text-[11px] font-semibold text-ink-900">
+                    <span className="text-sm font-bold text-ink-900 uppercase tracking-wider">
                       {stage.name}
                     </span>
                   </div>
-                  <span className="text-[11px] text-gray-400">
+                  <span className="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center text-xs font-bold text-gray-500 shadow-sm">
                     {stage.contacts.length}
                   </span>
                 </div>
@@ -113,29 +107,35 @@ export function PipelineVisual() {
                       key={contact.name}
                       onClick={() => setActiveCard(isActive ? null : cardId)}
                       aria-pressed={isActive}
-                      className={`text-left w-full rounded-md border p-2.5 transition-all cursor-pointer ${
+                      className={`text-left w-full rounded-xl p-4 transition-all duration-300 cursor-pointer shadow-sm relative overflow-hidden group ${
                         isActive
-                          ? "border-blue-300 bg-accent-muted shadow-sm"
-                          : "border-gray-150 bg-white hover:border-gray-300"
+                          ? "bg-white shadow-md scale-[1.02]"
+                          : "bg-white hover:shadow-md hover:scale-[1.02]"
                       }`}
-                      style={{ borderColor: isActive ? stage.color : undefined }}
+                      style={{ borderLeft: `4px solid ${stage.color}` }}
                     >
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <span className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-[9px] font-bold text-gray-500 shrink-0">
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-gray-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-600">
                           {contact.initials}
                         </span>
-                        <span className="text-[11px] font-semibold text-ink-900 leading-tight truncate">
-                          {contact.name}
-                        </span>
+                        <div>
+                          <span className="text-[13px] font-bold text-ink-900 block leading-tight">
+                            {contact.name}
+                          </span>
+                          <span className="text-[11px] text-gray-500 font-medium">
+                            {contact.company}
+                          </span>
+                        </div>
                       </div>
-                      <p className="text-[10px] text-gray-400 truncate mb-1">
-                        {contact.company}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-[11px] font-semibold text-ink-900">
+                      
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-50">
+                        <span className="text-sm font-black text-ink-900">
                           {contact.value}
                         </span>
-                        <span className="text-[10px] text-gray-400">
+                        <span className="text-[11px] font-semibold text-gray-400 flex items-center gap-1">
+                          <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                           {contact.date}
                         </span>
                       </div>
@@ -147,7 +147,7 @@ export function PipelineVisual() {
           </div>
         </div>
 
-        <p className="mt-3 text-caption text-center text-gray-400">
+        <p className="mt-6 text-sm font-medium text-center text-gray-400">
           Fictional demonstration — illustrative of a typical implementation
         </p>
       </div>

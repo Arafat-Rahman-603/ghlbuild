@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { site } from "@/lib/content/site";
 import { CtaSection } from "@/components/sections/CtaSection";
 
@@ -21,12 +21,21 @@ const processSteps = [
 export default function ProcessPage() {
   return (
     <>
-      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 text-center relative overflow-hidden">
+      <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-surface relative overflow-hidden text-center">
+        <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-blue-100/30 rounded-bl-[150px] -z-10 blur-3xl" />
         <div className="container-page">
           <div className="flex flex-col items-center">
-            <span className="eyebrow mb-3 block w-fit">Our Process</span>
-            <h1 className="text-display mb-4">A structured implementation methodology.</h1>
-            <p className="text-body-lg text-gray-500 max-w-2xl">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#1e90ff] text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              Our Process
+            </span>
+            <h1 className="text-display mb-6 max-w-4xl">
+              A structured implementation methodology.
+            </h1>
+            <p className="text-body-lg max-w-2xl">
               Every engagement follows the same disciplined process — adapted
               to your business specifics, but executed with consistent
               structure to ensure nothing is missed.
@@ -35,26 +44,28 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      <section className="section-md bg-surface border-b border-gray-100">
+      <section className="section-md bg-white border-b border-gray-100">
         <div className="container-narrow">
-          <div className="flex flex-col gap-0">
+          <div className="flex flex-col gap-0 max-w-2xl mx-auto">
             {processSteps.map((step, index) => (
               <div
                 key={step.num}
-                className={`relative pl-12 pb-10 ${index < processSteps.length - 1 ? "border-l border-gray-200 ml-4" : ""}`}
+                className={`relative pl-12 pb-14 ${index < processSteps.length - 1 ? "border-l-2 border-blue-100 ml-[15px]" : "ml-[15px]"}`}
               >
                 {/* Dot */}
-                <div className="absolute -left-4 top-0 w-8 h-8 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center">
-                  <span className="text-xs font-semibold tabular-nums text-ink-900">{step.num}</span>
+                <div className="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-blue-50 border-2 border-[#1e90ff] flex items-center justify-center shadow-sm">
+                  <span className="text-xs font-bold tabular-nums text-[#1e90ff]">{step.num}</span>
                 </div>
 
-                <h2 className="text-sm font-bold text-ink-900 mb-2 mt-1">{step.title}</h2>
-                <p className="text-body text-gray-500 mb-3">{step.desc}</p>
-                <div className="inline-flex items-center gap-2 text-xs text-gray-500 bg-white border border-gray-200 rounded-md px-3 py-1.5">
-                  <svg aria-hidden className="w-3 h-3 text-ink-900 shrink-0" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.75">
-                    <path d="M1.5 6l4 4 5-7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  Deliverable: {step.deliverable}
+                <div className="bg-surface rounded-[24px] p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                  <h2 className="text-subtitle mb-3">{step.title}</h2>
+                  <p className="text-[15px] leading-relaxed text-gray-500 mb-5">{step.desc}</p>
+                  <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue-600 bg-blue-50 border border-blue-100 rounded-full px-4 py-2">
+                    <svg aria-hidden className="w-3.5 h-3.5 shrink-0" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M1.5 6l4 4 5-7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Deliverable: {step.deliverable}
+                  </div>
                 </div>
               </div>
             ))}

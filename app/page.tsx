@@ -7,6 +7,7 @@ import { Accordion } from "@/components/ui/Accordion";
 
 import { HomeHeroSection } from "@/components/sections/HomeHeroSection";
 import { HomeTrustedBySection } from "@/components/sections/HomeTrustedBySection";
+import { HomeVideoSection } from "@/components/sections/HomeVideoSection";
 import { GhlCommandCentreSection } from "@/components/sections/GhlCommandCentreSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
@@ -44,33 +45,66 @@ function GhlCapabilitySection() {
   const capabilities = [
     {
       title: "CRM & Pipeline",
-      description:
-        "Custom pipeline stages, contact fields, lead source tracking, and opportunity management configured to match your real sales process.",
+      category: "Sales Architecture",
+      description: "Custom pipeline stages, contact fields, lead source tracking, and opportunity management configured to match your real sales process.",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+        </svg>
+      )
     },
     {
       title: "Workflow Automation",
-      description:
-        "Lead follow-up sequences, appointment confirmation, reminders, and post-service workflows — tested and operational at handover.",
+      category: "Operations",
+      description: "Lead follow-up sequences, appointment confirmation, reminders, and post-service workflows — tested and operational at handover.",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        </svg>
+      )
     },
     {
       title: "Calendar & Booking",
-      description:
-        "Structured booking with configured availability, appointment types, confirmation and reminder sequences.",
+      category: "Scheduling",
+      description: "Structured booking with configured availability, appointment types, confirmation and reminder sequences.",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+      )
     },
     {
       title: "Communication Systems",
-      description:
-        "Email authentication, phone/SMS setup, and two-way communication channels — fully configured and deliverability-tested.",
+      category: "Infrastructure",
+      description: "Email authentication, phone/SMS setup, and two-way communication channels — fully configured and deliverability-tested.",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      )
     },
     {
       title: "Integrations",
-      description:
-        "Native connections, webhooks, and API integrations to connect your GoHighLevel account with the tools your business uses.",
+      category: "Ecosystem",
+      description: "Native connections, webhooks, and API integrations to connect your GoHighLevel account with the tools your business uses.",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+      )
     },
     {
       title: "Funnels & Pages",
-      description:
-        "Landing pages, opt-in funnels, and booking pages built inside GHL and connected to your CRM and automation workflows.",
+      category: "Conversion",
+      description: "Landing pages, opt-in funnels, and booking pages built inside GHL and connected to your CRM and automation workflows.",
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-.293.707L13 13.414V19a1 1 0 01-.553.894l-4 2A1 1 0 017 21v-7.586L4.293 7.707A1 1 0 014 7V5z" />
+        </svg>
+      )
     },
   ];
 
@@ -84,12 +118,16 @@ function GhlCapabilitySection() {
           align="center"
           className="mb-12"
         />
-        <AnimatedStagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <AnimatedStagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {capabilities.map((cap) => (
             <AnimatedItem key={cap.title} className="h-full">
-              <div className="bg-white rounded-[24px] p-8 border border-neutral-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <h3 className="text-subtitle text-neutral-900 mb-3">{cap.title}</h3>
-                <p className="text-body-sm text-neutral-600">{cap.description}</p>
+              <div className="bg-white rounded-xl p-7 border border-neutral-200 shadow-sm hover:shadow-md hover:border-[#1e90ff]/30 transition-all duration-300 h-full flex flex-col group focus-within:ring-2 focus-within:ring-[#1e90ff] outline-none">
+                <div className="w-10 h-10 rounded-lg bg-[#e6f2ff] border border-[#99ccff]/30 flex items-center justify-center text-[#1e90ff] mb-5 group-hover:scale-110 group-hover:bg-[#1e90ff] group-hover:text-white transition-all duration-300">
+                  {cap.icon}
+                </div>
+                <span className="text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2">{cap.category}</span>
+                <h3 className="text-subtitle text-neutral-900 mb-2">{cap.title}</h3>
+                <p className="text-body-sm text-neutral-600 leading-relaxed">{cap.description}</p>
               </div>
             </AnimatedItem>
           ))}
@@ -145,17 +183,17 @@ function HomeProcess() {
             >
               {/* Hover line segment */}
               {index !== steps.length - 1 && (
-                <div className="absolute top-[19px] left-5 right-0 h-[2px] bg-transparent group-hover:bg-[#1b6ef3]/40 transition-colors duration-300 z-10" />
+                <div className="absolute top-[19px] left-5 right-0 h-[2px] bg-transparent group-hover:bg-[#1e90ff]/40 transition-colors duration-300 z-10" />
               )}
 
               {/* Step Marker */}
-              <div className="relative z-20 w-10 h-10 rounded-full flex items-center justify-center border-2 bg-white border-gray-200 text-gray-400 group-hover:border-[#1b6ef3] group-hover:text-[#1b6ef3] group-hover:shadow-[0_0_0_4px_rgba(27,110,243,0.1)] transition-all duration-300">
+              <div className="relative z-20 w-10 h-10 rounded-full flex items-center justify-center border-2 bg-white border-gray-200 text-gray-400 group-hover:border-[#1e90ff] group-hover:text-[#1e90ff] group-hover:shadow-[0_0_0_4px_rgba(30,144,255,0.1)] transition-all duration-300">
                 <span className="text-caption font-bold">{step.num}</span>
               </div>
 
               {/* Step Content */}
               <div className="mt-8 max-w-xs relative z-20">
-                <h3 className="text-subtitle mb-4 text-ink-900 group-hover:text-[#1b6ef3] transition-colors duration-300">
+                <h3 className="text-subtitle mb-4 text-ink-900 group-hover:text-[#1e90ff] transition-colors duration-300">
                   {step.title}
                 </h3>
                 <p className="text-body text-gray-500">
@@ -172,17 +210,17 @@ function HomeProcess() {
             <AnimatedItem key={step.num} className="relative flex gap-6 pb-12 last:pb-0 group cursor-default">
               {/* Vertical connecting line */}
               {index !== steps.length - 1 && (
-                <div className="absolute top-10 bottom-0 left-[19px] w-[2px] bg-gray-100 group-hover:bg-[#1b6ef3]/40 transition-colors duration-300 z-0" />
+                <div className="absolute top-10 bottom-0 left-[19px] w-[2px] bg-gray-100 group-hover:bg-[#1e90ff]/40 transition-colors duration-300 z-0" />
               )}
 
               {/* Step Marker */}
-              <div className="relative z-10 w-10 h-10 shrink-0 rounded-full bg-white border-2 border-gray-200 text-gray-400 group-hover:border-[#1b6ef3] flex items-center justify-center group-hover:text-[#1b6ef3] group-hover:shadow-[0_0_0_4px_rgba(27,110,243,0.1)] transition-all duration-300">
+              <div className="relative z-10 w-10 h-10 shrink-0 rounded-full bg-white border-2 border-gray-200 text-gray-400 group-hover:border-[#1e90ff] flex items-center justify-center group-hover:text-[#1e90ff] group-hover:shadow-[0_0_0_4px_rgba(30,144,255,0.1)] transition-all duration-300">
                 <span className="text-caption font-bold">{step.num}</span>
               </div>
 
               {/* Step Content */}
               <div className="pt-1.5 relative z-10">
-                <h3 className="text-subtitle text-ink-900 mb-3 group-hover:text-[#1b6ef3] transition-colors duration-300">
+                <h3 className="text-subtitle text-ink-900 mb-3 group-hover:text-[#1e90ff] transition-colors duration-300">
                   {step.title}
                 </h3>
                 <p className="text-body text-gray-500">
@@ -266,7 +304,7 @@ function HomePricingSection() {
               <div
                 className={`flex flex-col gap-8 relative transition-all duration-300 h-full p-8 md:p-10 rounded-[24px] ${
                   pkg.highlighted
-                    ? "bg-white border-2 border-green-500 shadow-[0_20px_40px_rgba(34,197,94,0.1)] md:-translate-y-4 z-10"
+                    ? "bg-white border-2 border-[#1e90ff] shadow-[0_20px_40px_rgba(30,144,255,0.1)] md:-translate-y-4 z-10"
                     : "bg-white/60 border border-gray-200 hover:bg-white hover:border-gray-300 hover:shadow-sm"
                 }`}
               >
@@ -287,8 +325,8 @@ function HomePricingSection() {
                 <ul className="flex flex-col gap-4 flex-1">
                   {pkg.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 text-body-sm text-gray-600">
-                      <div className="mt-1 w-4 h-4 rounded-full bg-green-50 flex items-center justify-center border border-green-100 shrink-0">
-                        <svg viewBox="0 0 10 8" fill="none" className="w-2 h-2 text-green-500" stroke="currentColor" strokeWidth="2.5">
+                      <div className="mt-1 w-4 h-4 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100 shrink-0">
+                        <svg viewBox="0 0 10 8" fill="none" className="w-2 h-2 text-[#1e90ff]" stroke="currentColor" strokeWidth="2.5">
                           <path d="M1 4l3 3 5-6" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </div>
@@ -300,7 +338,7 @@ function HomePricingSection() {
                   href={pkg.href}
                   className={`btn w-full mt-4 ${
                     pkg.highlighted 
-                      ? "btn-primary shadow-md shadow-green-500/20 hover:shadow-green-500/40" 
+                      ? "btn-primary shadow-md shadow-blue-500/20 hover:shadow-blue-500/40" 
                       : "bg-white border border-gray-200 text-ink-900 hover:bg-gray-50"
                   }`}
                 >
@@ -431,6 +469,7 @@ export default function HomePage() {
       />
       <HomeHero />
       <HomeTrustedBySection />
+      <HomeVideoSection />
       <GhlCommandCentreSection />
       <ServicesSection />
       <VideoTestimonialsSection />

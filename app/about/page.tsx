@@ -13,20 +13,17 @@ export const metadata: Metadata = {
 // 1. ABOUT HERO
 function AboutHero() {
   return (
-    <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-white border-b border-gray-100 text-center relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/2 h-[500px] bg-accent/5 rounded-bl-[100px] -z-10" />
+    <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-surface relative overflow-hidden text-center">
+      <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-blue-100/30 rounded-bl-[150px] -z-10 blur-3xl" />
       <div className="container-page">
-        <AnimatedStagger className="max-w-3xl mx-auto flex flex-col items-center">
+        <AnimatedStagger className="max-w-5xl mx-auto flex flex-col items-center">
           <AnimatedItem>
-            <span className="eyebrow mb-3 block w-fit">About Us</span>
-          </AnimatedItem>
-          <AnimatedItem>
-            <h1 className="text-display mb-5">
+            <h1 className="text-display mb-8 max-w-[1100px] mx-auto text-center">
               We implement systems that businesses can actually operate.
             </h1>
           </AnimatedItem>
           <AnimatedItem>
-            <p className="text-body-lg text-gray-500 max-w-2xl">
+            <p className="text-body-lg max-w-2xl">
               {site.name} is a specialized GoHighLevel implementation and business automation agency. We bridge the gap between powerful software capabilities and the operational realities of scaling businesses.
             </p>
           </AnimatedItem>
@@ -39,20 +36,30 @@ function AboutHero() {
 // 2. WHO WE ARE
 function WhoWeAre() {
   return (
-    <section className="section-md bg-surface border-b border-gray-100">
+    <section className="section-md bg-surface">
       <div className="container-page">
-        <AnimatedStagger className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
+        <AnimatedStagger className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <AnimatedItem>
-            <h3 className="text-title mb-2">What We Do</h3>
-            <p className="text-body text-gray-500">We architect, build, and deploy custom GoHighLevel CRM instances, marketing funnels, and complex workflow automations tailored to specific business operations.</p>
+            <div className="bg-white p-10 rounded-xl border border-gray-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-full">
+              <span className="eyebrow mb-3 block">01 / Focus</span>
+              <h3 className="text-subtitle mb-4">What We Do</h3>
+              <p className="text-body-sm">We architect, build, and deploy custom GoHighLevel CRM instances, marketing funnels, and complex workflow automations tailored to specific business operations.</p>
+            </div>
           </AnimatedItem>
           <AnimatedItem>
-            <h3 className="text-title mb-2">Who We Serve</h3>
-            <p className="text-body text-gray-500">We partner with B2B service providers, agencies, and high-ticket coaching businesses that have outgrown manual processes and need a reliable software ecosystem.</p>
+            <div className="bg-white p-10 rounded-xl border border-gray-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 h-full">
+              <span className="eyebrow mb-3 block">02 / Clients</span>
+              <h3 className="text-subtitle mb-4">Who We Serve</h3>
+              <p className="text-body-sm">We partner with B2B service providers, agencies, and high-ticket coaching businesses that have outgrown manual processes and need a reliable software ecosystem.</p>
+            </div>
           </AnimatedItem>
           <AnimatedItem>
-            <h3 className="text-title mb-2">Our Difference</h3>
-            <p className="text-body text-gray-500">We don&apos;t sell generic templates. We act as your fractional systems engineering team, testing every automation before handover to ensure your team will actually adopt it.</p>
+            <div className="bg-[#1e90ff] p-10 rounded-xl border border-blue-500 shadow-xl hover:-translate-y-2 transition-all duration-500 h-full text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-full -z-10" />
+              <span className="eyebrow mb-3 block text-blue-100">03 / Value</span>
+              <h3 className="text-2xl font-bold text-white mb-4">Our Difference</h3>
+              <p className="text-[15px] text-blue-50 leading-relaxed">We don&apos;t sell generic templates. We act as your fractional systems engineering team, testing every automation before handover to ensure your team will actually adopt it.</p>
+            </div>
           </AnimatedItem>
         </AnimatedStagger>
       </div>
@@ -63,31 +70,38 @@ function WhoWeAre() {
 // 3. OUR STORY
 function OurStory() {
   return (
-    <section className="section-md bg-white border-b border-gray-100">
+    <section className="section-md bg-white">
       <div className="container-page">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           <AnimatedStagger>
             <AnimatedItem>
-              <h2 className="text-headline mb-5">Software is only as good as its implementation.</h2>
+              <h2 className="text-headline mb-8 leading-[1.1]">
+                Software is only as good as its implementation.
+              </h2>
             </AnimatedItem>
             <AnimatedItem>
-              <div className="prose prose-gray max-w-none text-body text-gray-600 space-y-4">
+              <div className="prose prose-lg max-w-none text-gray-500 leading-relaxed space-y-6">
                 <p>
                   Most businesses don&apos;t fail at GoHighLevel because the software lacks features. They fail because the system was never configured to match how their business actually operates in the real world.
                 </p>
                 <p>
                   We started {site.name} after watching countless companies purchase premium software, only to abandon it months later because the setup was too complex, the workflows were generic templates, and their team fundamentally refused to adopt it.
                 </p>
-                <p>
-                  Our approach evolved to be completely different. We realized that companies didn&apos;t need another SaaS subscription—they needed an implementation partner. Someone to map the actual sales process, design the logic, build the pipelines, write the automations, and rigorously test everything end-to-end before a final, documented handover.
-                </p>
+                <div className="p-6 bg-blue-50/50 rounded-2xl border-l-4 border-[#1e90ff]">
+                  <p className="text-ink-900 font-medium m-0">
+                    We realized that companies didn&apos;t need another SaaS subscription—they needed an implementation partner. Someone to map the actual sales process, design the logic, build the pipelines, write the automations, and rigorously test everything.
+                  </p>
+                </div>
               </div>
             </AnimatedItem>
           </AnimatedStagger>
-          <AnimatedStagger className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border border-gray-200 bg-gray-100">
-             <div className="absolute inset-0 flex items-center justify-center">
-               <span className="text-gray-400 font-medium tracking-wide text-xs uppercase">Story Visual Placeholder</span>
-             </div>
+          <AnimatedStagger className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-gray-100 shadow-2xl group">
+             <img 
+               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
+               alt="Team collaborating"
+               className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
           </AnimatedStagger>
         </div>
       </div>
@@ -98,19 +112,26 @@ function OurStory() {
 // 4 & 5. MISSION & VISION
 function MissionVision() {
   return (
-    <section className="section-md bg-ink text-center text-white border-b border-gray-800">
+    <section className="section-md bg-surface border-b border-gray-100 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-50 rounded-full blur-[100px] -z-10" />
       <div className="container-page">
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12">
           <AnimatedStagger>
             <AnimatedItem>
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3 block">Our Mission</span>
-              <h2 className="text-xl md:text-2xl font-bold leading-tight">To eliminate operational friction for scaling businesses through precise, reliable automation.</h2>
+              <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm relative overflow-hidden h-full group flex flex-col justify-center">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-700" />
+                <span className="eyebrow mb-4 block">Our Mission</span>
+                <h2 className="text-subtitle leading-relaxed max-w-lg">To eliminate operational friction for scaling businesses through precise, reliable automation.</h2>
+              </div>
             </AnimatedItem>
           </AnimatedStagger>
           <AnimatedStagger>
             <AnimatedItem>
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3 block">Our Vision</span>
-              <h2 className="text-xl md:text-2xl font-bold leading-tight">A future where business owners focus purely on strategy and relationships, while connected systems handle the rest.</h2>
+              <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm relative overflow-hidden h-full group flex flex-col justify-center">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-700" />
+                <span className="eyebrow mb-4 block">Our Vision</span>
+                <h2 className="text-subtitle leading-relaxed max-w-lg">A future where business owners focus purely on strategy, while connected systems handle the rest.</h2>
+              </div>
             </AnimatedItem>
           </AnimatedStagger>
         </div>
@@ -149,28 +170,27 @@ function PhilosophyAndValues() {
   ];
 
   return (
-    <section className="section-md bg-surface border-b border-gray-100">
+    <section className="section-md bg-surface">
       <div className="container-page">
-        <AnimatedStagger className="mb-12 text-center max-w-2xl mx-auto">
+        <AnimatedStagger className="mb-10 text-center max-w-2xl mx-auto">
           <AnimatedItem>
-            <span className="eyebrow mb-4 block w-fit mx-auto">Our Philosophy</span>
             <h2 className="text-headline mb-4">What we believe about systems.</h2>
-            <p className="text-body text-gray-500">The core principles that guide how we architect, build, and deliver every GoHighLevel ecosystem.</p>
+            <p className="text-body-lg">The core principles that guide how we architect, build, and deliver every GoHighLevel ecosystem.</p>
           </AnimatedItem>
         </AnimatedStagger>
 
-        <AnimatedStagger className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <AnimatedStagger className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {values.map((val) => (
             <AnimatedItem key={val.title} className="h-full">
-              <div className="card card-padded h-full hover:border-gray-300 transition-colors">
-                <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-6">
-                  <val.icon className="w-6 h-6 text-ink-900" />
+              <div className="bg-white rounded-3xl p-8 lg:p-10 border border-gray-200 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-500 h-full flex flex-col group">
+                <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-[#1e90ff] mb-5 group-hover:scale-110 group-hover:bg-[#1e90ff] group-hover:text-white transition-all duration-500">
+                  <val.icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-title mb-3">{val.title}</h3>
-                <p className="text-body text-gray-600 mb-4">{val.body}</p>
-                <div className="pt-4 border-t border-gray-100">
-                  <span className="text-xs font-bold uppercase tracking-wider text-accent block mb-1">In Practice:</span>
-                  <p className="text-sm text-gray-500 italic">{val.behavior}</p>
+                <h3 className="text-subtitle mb-3">{val.title}</h3>
+                <p className="text-gray-500 mb-6 leading-relaxed">{val.body}</p>
+                <div className="pt-6 border-t border-gray-100 mt-auto">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#1e90ff] block mb-2">In Practice:</span>
+                  <p className="text-[15px] font-medium text-ink-900 italic">&quot;{val.behavior}&quot;</p>
                 </div>
               </div>
             </AnimatedItem>
@@ -196,19 +216,19 @@ function Expertise() {
   ];
 
   return (
-    <section className="section-md bg-white border-b border-gray-100">
+    <section className="section-md bg-white">
       <div className="container-page">
         <div className="grid lg:grid-cols-[1fr_2fr] gap-12 items-center">
           <AnimatedStagger>
             <AnimatedItem>
               <h2 className="text-headline mb-4">Our specialized expertise.</h2>
-              <p className="text-body text-gray-500">We focus exclusively on the technical implementation of revenue-generating systems.</p>
+              <p className="text-body-lg">We focus exclusively on the technical implementation of revenue-generating systems.</p>
             </AnimatedItem>
           </AnimatedStagger>
-          <AnimatedStagger className="flex flex-wrap gap-3">
+          <AnimatedStagger className="flex flex-wrap gap-3 lg:gap-4">
             {areas.map((area) => (
               <AnimatedItem key={area}>
-                <span className="px-4 py-2 bg-surface border border-gray-200 rounded-full text-sm font-medium text-ink-900">
+                <span className="inline-block px-5 py-2.5 bg-gray-50 border border-gray-200 rounded-full text-body-sm font-semibold text-gray-700 hover:border-gray-300 hover:bg-gray-100 transition-colors cursor-default">
                   {area}
                 </span>
               </AnimatedItem>
@@ -232,23 +252,23 @@ function HowWeWork() {
   ];
 
   return (
-    <section className="section-md bg-surface border-b border-gray-100 overflow-hidden">
+    <section className="section-md bg-surface overflow-hidden">
       <div className="container-page">
-        <AnimatedStagger className="text-center mb-10">
+        <AnimatedStagger className="text-center mb-16">
           <AnimatedItem>
-            <span className="eyebrow mx-auto mb-4">Process</span>
             <h2 className="text-headline mb-4">How we execute.</h2>
+            <p className="text-body-lg">A rigorous process designed for precision.</p>
           </AnimatedItem>
         </AnimatedStagger>
 
-        <AnimatedStagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <AnimatedStagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {steps.map((step, idx) => (
             <AnimatedItem key={step.name}>
-              <div className="relative pl-8 border-l-2 border-gray-200 pb-8 h-full group hover:border-accent transition-colors">
-                <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-white border-2 border-gray-300 group-hover:border-accent transition-colors" />
-                <span className="text-xs font-bold text-gray-400 mb-1 block">Phase 0{idx + 1}</span>
-                <h3 className="text-xl font-bold text-ink-900 mb-3">{step.name}</h3>
-                <p className="text-body text-gray-500">{step.desc}</p>
+              <div className="relative pl-10 border-l-2 border-gray-200 pb-10 h-full group hover:border-[#1e90ff] transition-colors">
+                <div className="absolute left-[-11px] top-0 w-5 h-5 rounded-full bg-white border-[3px] border-gray-300 group-hover:border-[#1e90ff] transition-colors" />
+                <span className="eyebrow mb-2 block">Phase 0{idx + 1}</span>
+                <h3 className="text-subtitle mb-3">{step.name}</h3>
+                <p className="text-gray-500 leading-relaxed">{step.desc}</p>
               </div>
             </AnimatedItem>
           ))}
@@ -265,14 +285,13 @@ function Technology() {
       <div className="container-page">
         <AnimatedStagger>
           <AnimatedItem>
-            <h2 className="text-title mb-8">Integrated Ecosystems</h2>
-            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-50 grayscale">
-              {/* Placeholders for partner/tech logos */}
-              <div className="h-8 w-32 bg-gray-200 rounded animate-pulse" />
-              <div className="h-8 w-24 bg-gray-200 rounded animate-pulse" />
-              <div className="h-8 w-40 bg-gray-200 rounded animate-pulse" />
-              <div className="h-8 w-28 bg-gray-200 rounded animate-pulse" />
-              <div className="h-8 w-36 bg-gray-200 rounded animate-pulse" />
+            <h2 className="text-2xl font-bold text-gray-400 mb-8 uppercase tracking-widest">Integrated Ecosystems</h2>
+            <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-20 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+              {/* Added a few random recognizable SVG shapes for visual interest instead of empty blocks */}
+              <svg className="h-8" viewBox="0 0 100 30" fill="currentColor"><rect width="100" height="30" rx="4" /></svg>
+              <svg className="h-8 w-24" viewBox="0 0 100 30" fill="currentColor"><circle cx="15" cy="15" r="10" /><rect x="35" y="10" width="60" height="10" rx="2" /></svg>
+              <svg className="h-8 w-32" viewBox="0 0 100 30" fill="currentColor"><polygon points="10,25 25,5 40,25" /><rect x="50" y="10" width="50" height="10" rx="2" /></svg>
+              <svg className="h-8 w-28" viewBox="0 0 100 30" fill="currentColor"><rect x="0" y="0" width="20" height="30" rx="2" /><rect x="30" y="10" width="70" height="10" rx="2" /></svg>
             </div>
           </AnimatedItem>
         </AnimatedStagger>
@@ -284,19 +303,19 @@ function Technology() {
 // 11. TEAM
 function Team() {
   const team = [
-    { name: "Marcus Thorne", role: "Lead Systems Architect", bio: "Former enterprise software consultant specializing in workflow orchestration and CRM adoption.", imgId: "founder" },
-    { name: "Elena Rostova", role: "Automation Specialist", bio: "Expert in Zapier, Make, and GoHighLevel native automations. Ensures data flows flawlessly.", imgId: "team-1" },
-    { name: "David Chen", role: "Integration Engineer", bio: "Handles complex API integrations, webhook configurations, and database management.", imgId: "team-2" },
-    { name: "Sarah Jenkins", role: "Client Success Manager", bio: "Leads team training, creates documentation, and provides post-launch support.", imgId: "team-3" },
+    { name: "Marcus Thorne", role: "Lead Systems Architect", bio: "Former enterprise software consultant specializing in workflow orchestration and CRM adoption.", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" },
+    { name: "Elena Rostova", role: "Automation Specialist", bio: "Expert in Zapier, Make, and GoHighLevel native automations. Ensures data flows flawlessly.", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" },
+    { name: "David Chen", role: "Integration Engineer", bio: "Handles complex API integrations, webhook configurations, and database management.", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" },
+    { name: "Sarah Jenkins", role: "Client Success Manager", bio: "Leads team training, creates documentation, and provides post-launch support.", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" },
   ];
 
   return (
-    <section className="section-md bg-surface border-b border-gray-100">
+    <section className="section-md bg-surface">
       <div className="container-page">
-        <AnimatedStagger className="text-center mb-12">
+        <AnimatedStagger className="text-center mb-16">
           <AnimatedItem>
             <h2 className="text-headline mb-4">The team behind the systems.</h2>
-            <p className="text-body-lg text-gray-500 max-w-2xl mx-auto">
+            <p className="text-body-lg max-w-2xl mx-auto">
               Our implementation specialists combine deep technical expertise with a practical understanding of B2B sales and operations.
             </p>
           </AnimatedItem>
@@ -305,15 +324,13 @@ function Team() {
         <AnimatedStagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member) => (
             <AnimatedItem key={member.name}>
-              <div className="flex flex-col">
-                <div className="w-full aspect-[4/5] rounded-xl bg-gray-200 mb-5 relative overflow-hidden border border-gray-200">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-xs uppercase tracking-wider text-gray-400 font-medium">Headshot Placeholder</span>
-                  </div>
+              <div className="flex flex-col group">
+                <div className="w-full aspect-square rounded-xl mb-6 relative overflow-hidden border border-gray-200 shadow-sm">
+                  <img src={member.img} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
-                <h3 className="text-lg font-bold text-ink-900 mb-1">{member.name}</h3>
-                <p className="text-sm font-semibold text-accent mb-3">{member.role}</p>
-                <p className="text-sm text-gray-600">{member.bio}</p>
+                <h3 className="text-subtitle mb-1">{member.name}</h3>
+                <p className="text-sm font-bold tracking-wider text-[#1e90ff] uppercase mb-4">{member.role}</p>
+                <p className="text-body-sm">{member.bio}</p>
               </div>
             </AnimatedItem>
           ))}
@@ -326,24 +343,23 @@ function Team() {
 // 12 & 13. WORKSPACE & CULTURE
 function WorkspaceCulture() {
   return (
-    <section className="section-md bg-white border-b border-gray-100">
+    <section className="section-md bg-white">
       <div className="container-page">
-        <AnimatedStagger className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-12">
-          <AnimatedItem className="order-2 lg:order-1 grid grid-cols-2 gap-4">
-             <div className="aspect-square rounded-2xl bg-gray-100 border border-gray-200 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-center p-4"><span className="text-xs text-gray-400 uppercase font-medium">Workspace Visual</span></div>
+        <AnimatedStagger className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center mb-12">
+          <AnimatedItem className="order-2 lg:order-1 grid grid-cols-2 gap-6">
+             <div className="aspect-[3/4] rounded-xl overflow-hidden group shadow-xl">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" alt="Workspace" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
              </div>
-             <div className="aspect-square rounded-2xl bg-gray-100 border border-gray-200 relative overflow-hidden mt-8">
-                <div className="absolute inset-0 flex items-center justify-center text-center p-4"><span className="text-xs text-gray-400 uppercase font-medium">Collaboration Visual</span></div>
+             <div className="aspect-[3/4] rounded-xl overflow-hidden mt-12 group shadow-xl">
+                <img src="https://images.unsplash.com/photo-1522071901873-411886a10004?auto=format&fit=crop&q=80&w=600" alt="Collaboration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
              </div>
           </AnimatedItem>
           <AnimatedItem className="order-1 lg:order-2">
-            <span className="eyebrow mb-4 block w-fit">Culture</span>
             <h2 className="text-headline mb-6">Built on extreme ownership.</h2>
-            <div className="prose prose-gray max-w-none text-body text-gray-600 space-y-4">
+            <div className="prose prose-lg max-w-none text-gray-500 leading-relaxed space-y-6">
               <p>We don&apos;t believe in tossing software over the fence and wishing our clients good luck. Our culture is rooted in extreme ownership of the final operational outcome.</p>
               <p>When an automation fails, we don&apos;t blame the software limit. We find the workaround. When a team resists adoption, we don&apos;t blame the user. We improve the training and simplify the interface.</p>
-              <p>Our remote-first workspace is designed for deep work, rigorous testing, and continuous learning within the ever-evolving automation landscape.</p>
+              <p className="text-ink-900 font-medium">Our remote-first workspace is designed for deep work, rigorous testing, and continuous learning within the ever-evolving automation landscape.</p>
             </div>
           </AnimatedItem>
         </AnimatedStagger>
@@ -372,7 +388,7 @@ function Milestones() {
         <AnimatedStagger className="space-y-6">
           {milestones.map((m) => (
             <AnimatedItem key={m.year} className="flex gap-6 items-center bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-              <div className="text-xl font-bold text-ink-900 border-r border-gray-200 pr-6 shrink-0">{m.year}</div>
+              <div className="text-subtitle border-r border-gray-200 pr-6 shrink-0">{m.year}</div>
               <p className="text-body text-gray-600">{m.text}</p>
             </AnimatedItem>
           ))}
@@ -387,33 +403,43 @@ function WhyUs() {
   return (
     <section className="section-md bg-white border-b border-gray-100">
       <div className="container-page">
-        <div className="bg-ink rounded-3xl p-10 lg:p-16 text-white relative overflow-hidden">
-           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-800 via-ink to-ink -z-10" />
+        <div className="bg-surface rounded-2xl p-10 lg:p-16 border border-gray-200 relative overflow-hidden shadow-2xl">
+           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/50 to-transparent -z-10" />
            
-           <AnimatedStagger className="text-center max-w-3xl mx-auto mb-12">
+           <AnimatedStagger className="text-center max-w-3xl mx-auto mb-16">
              <AnimatedItem>
+               <span className="eyebrow mb-3 block">Our Positioning</span>
                <h2 className="text-headline mb-4">Why clients choose {site.name}</h2>
-               <p className="text-body-lg text-gray-400">We are not a traditional marketing agency. We are systems architects.</p>
+               <p className="text-body-lg">We are not a traditional marketing agency. We are systems architects.</p>
              </AnimatedItem>
            </AnimatedStagger>
 
            <AnimatedStagger className="grid md:grid-cols-3 gap-8">
              <AnimatedItem>
-               <div className="h-full border-t border-gray-800 pt-6">
-                 <h3 className="text-lg font-bold mb-3">Clarity over Complexity</h3>
-                 <p className="text-sm text-gray-400 leading-relaxed">We untangle messy tech stacks and replace them with streamlined, understandable logic that anyone can follow.</p>
+               <div className="h-full bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+                 <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#1e90ff] flex items-center justify-center mb-6">
+                   <Target className="w-6 h-6" />
+                 </div>
+                 <h3 className="text-subtitle mb-3">Clarity over Complexity</h3>
+                 <p className="text-body-sm">We untangle messy tech stacks and replace them with streamlined, understandable logic that anyone can follow.</p>
                </div>
              </AnimatedItem>
              <AnimatedItem>
-               <div className="h-full border-t border-gray-800 pt-6">
-                 <h3 className="text-lg font-bold mb-3">Structured Process</h3>
-                 <p className="text-sm text-gray-400 leading-relaxed">No guesswork. Every project follows our rigorous scoping, building, testing, and handover protocol.</p>
+               <div className="h-full bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+                 <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#1e90ff] flex items-center justify-center mb-6">
+                   <CheckCircle2 className="w-6 h-6" />
+                 </div>
+                 <h3 className="text-subtitle mb-3">Structured Process</h3>
+                 <p className="text-body-sm">No guesswork. Every project follows our rigorous scoping, building, testing, and handover protocol.</p>
                </div>
              </AnimatedItem>
              <AnimatedItem>
-               <div className="h-full border-t border-gray-800 pt-6">
-                 <h3 className="text-lg font-bold mb-3">Practical Automation</h3>
-                 <p className="text-sm text-gray-400 leading-relaxed">We build automations that solve real bottlenecks, not flashy gimmicks that break under pressure.</p>
+               <div className="h-full bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+                 <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#1e90ff] flex items-center justify-center mb-6">
+                   <Shield className="w-6 h-6" />
+                 </div>
+                 <h3 className="text-subtitle mb-3">Practical Automation</h3>
+                 <p className="text-body-sm">We build automations that solve real bottlenecks, not flashy gimmicks that break under pressure.</p>
                </div>
              </AnimatedItem>
            </AnimatedStagger>
