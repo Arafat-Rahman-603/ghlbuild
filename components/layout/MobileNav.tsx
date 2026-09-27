@@ -117,10 +117,10 @@ export function MobileNav() {
                   <div className="flex items-center justify-between px-5 h-14 border-b border-gray-100 bg-white shrink-0">
                     <Link
                       href="/"
-                      className="font-bold text-lg text-ink-900 tracking-tight"
+                      className="flex items-center"
                       onClick={() => setIsOpen(false)}
                     >
-                      {site.name}
+                      <img src="/logo.png" alt={`${site.name} logo`} className="h-9 w-auto object-contain" />
                     </Link>
                     <button
                       aria-label="Close navigation"

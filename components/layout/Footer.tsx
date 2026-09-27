@@ -20,12 +20,8 @@ export function Footer() {
           {/* Brand / Intro */}
           <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="inline-flex items-center group">
-              <span className="flex items-center gap-2.5 text-2xl font-bold tracking-tight text-white">
-                <span className="flex h-8 w-8 items-center justify-center rounded-md bg-[#1e90ff]">
-                  <span className="h-4.5 w-2.5 skew-x-12 rounded-sm bg-white" />
-                </span>
-
-                <span>{site.name}</span>
+              <span className="flex items-center">
+                <img src="/logo.png" alt={`${site.name} logo`} className="h-12 md:h-14 w-auto object-contain brightness-0 invert" />
               </span>
             </Link>
 

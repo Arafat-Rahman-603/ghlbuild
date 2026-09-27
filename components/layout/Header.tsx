@@ -35,10 +35,7 @@ export function Header() {
             className="font-bold text-xl text-neutral-900 tracking-tight flex items-center gap-2 shrink-0 mr-6 hover:opacity-80 transition-opacity"
             aria-label={`${site.name} — Go to homepage`}
           >
-            <div className="w-6 h-6 bg-blue-500 rounded flex items-center justify-center">
-              <div className="w-2 h-4 bg-white rounded-sm transform skew-x-12" />
-            </div>
-            {site.name}
+            <img src="/logo.png" alt={`${site.name} logo`} className="h-10 md:h-14 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav */}
