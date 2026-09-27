@@ -100,7 +100,7 @@ const industryCards: IndustryCardItem[] = [
 export function IndustriesSection() {
   return (
     <section
-      className="py-12 sm:py-16 md:py-20 border-b border-gray-200 overflow-hidden relative"
+      className="section-md border-b border-gray-200 overflow-hidden relative"
       style={{ backgroundColor: "#f5f4f0" }}
       aria-labelledby="industries-heading"
     >

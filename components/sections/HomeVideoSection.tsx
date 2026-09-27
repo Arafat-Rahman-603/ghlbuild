@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export function HomeVideoSection() {
   return (
-    <section className="py-16 md:py-24 overflow-hidden relative" style={{ backgroundColor: "#f8f8f6" }}>
+    <section className="section-md overflow-hidden relative" style={{ backgroundColor: "#f8f8f6" }}>
       {/* Subtle glow behind video */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#1e90ff] opacity-[0.03] blur-[100px] rounded-full pointer-events-none" />
       <div className="container-page">

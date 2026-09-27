@@ -29,50 +29,50 @@ function CellValue({ value }: { value: string | boolean }) {
 export function ComparisonSection() {
   return (
     <section
-      className="section-md bg-surface"
+      className="section-md bg-white border-b border-gray-200"
       aria-labelledby="comparison-heading"
     >
       <div className="container-page">
-        <div className="mb-16 text-center max-w-3xl mx-auto">
-          <span className="eyebrow mb-3 block">Comparison</span>
-          <h2 id="comparison-heading" className="text-headline">
+        <div className="mb-16 text-center max-w-2xl mx-auto">
+          <span className="eyebrow mb-4 block">The Difference</span>
+          <h2 id="comparison-heading" className="text-3xl md:text-4xl font-bold text-ink-900 tracking-tight leading-[1.1]">
             DIY vs. generic setup vs. professional implementation.
           </h2>
         </div>
 
         {/* Premium responsive table wrapper */}
-        <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-xl bg-white relative">
+        <div className="overflow-x-auto rounded-3xl border border-gray-200 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] bg-white relative">
           <table className="w-full text-left" aria-label="Implementation approach comparison">
             <thead>
               <tr className="border-b border-gray-200">
-                <th scope="col" className="p-6 lg:p-8 w-1/3 sm:w-auto text-lg font-bold text-ink-900 bg-gray-50/50">
+                <th scope="col" className="p-6 lg:p-8 w-1/3 sm:w-auto text-lg font-bold text-ink-900 bg-gray-50/30">
                   Feature
                 </th>
-                <th scope="col" className="p-6 lg:p-8 text-sm font-bold uppercase tracking-wider text-gray-500 text-center bg-white">
+                <th scope="col" className="p-6 lg:p-8 text-sm font-bold uppercase tracking-widest text-gray-400 text-center bg-white">
                   DIY
                 </th>
-                <th scope="col" className="p-6 lg:p-8 text-sm font-bold uppercase tracking-wider text-gray-500 text-center bg-white border-l border-r border-gray-100">
+                <th scope="col" className="p-6 lg:p-8 text-sm font-bold uppercase tracking-widest text-gray-400 text-center bg-white border-l border-r border-gray-100">
                   Generic Setup
                 </th>
-                <th scope="col" className="p-6 lg:p-8 text-sm font-bold uppercase tracking-wider text-white text-center bg-ink-900 relative">
+                <th scope="col" className="p-6 lg:p-8 text-sm font-bold uppercase tracking-widest text-white text-center bg-ink-900 relative">
                   <div className="absolute top-0 left-0 w-full h-1 bg-[#1e90ff]" />
-                  Professional Implementation
+                  Professional
                 </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
               {comparisonRows.map((row) => (
-                <tr key={row.feature} className="hover:bg-blue-50/20 transition-colors">
-                  <th scope="row" className="p-5 lg:p-6 text-sm font-bold text-ink-900 bg-gray-50/50">
+                <tr key={row.feature} className="hover:bg-gray-50/50 transition-colors">
+                  <th scope="row" className="p-5 lg:p-6 text-sm font-bold text-ink-900 bg-gray-50/30">
                     {row.feature}
                   </th>
                   <td className="p-5 lg:p-6 text-center">
                     <CellValue value={row.diy} />
                   </td>
-                  <td className="p-5 lg:p-6 text-center border-l border-r border-gray-100 bg-gray-50/20">
+                  <td className="p-5 lg:p-6 text-center border-l border-r border-gray-100 bg-white">
                     <CellValue value={row.generic} />
                   </td>
-                  <td className="p-5 lg:p-6 text-center bg-ink-900/[0.02]">
+                  <td className="p-5 lg:p-6 text-center bg-ink-900/5">
                     <CellValue value={row.professional} />
                   </td>
                 </tr>

@@ -38,7 +38,7 @@ export function CtaSection({
 
   return (
     <section
-      className="py-16 md:py-24 bg-blue-50 border-t border-blue-100 relative overflow-hidden"
+      className="section-md bg-blue-50 border-t border-blue-100 relative overflow-hidden"
       aria-labelledby="cta-heading"
     >
       {/* Background Pattern */}

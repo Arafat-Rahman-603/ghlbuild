@@ -4,7 +4,6 @@ import { ghlSetupFaq } from "@/lib/content/ghl-setup";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { GhlHero } from "@/components/sections/GhlHero";
 import { ProblemSection } from "@/components/sections/ProblemSection";
-import { OutcomeSection } from "@/components/sections/OutcomeSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ConfigSection } from "@/components/sections/ConfigSection";
 import { PipelineVisual } from "@/components/sections/PipelineVisual";
@@ -102,7 +101,6 @@ export default function GhlSetupPage() {
       {/* Page sections */}
       <GhlHero />
       <ProblemSection />
-      <OutcomeSection />
       <ProcessSection />
       <ConfigSection />
       <PipelineVisual />

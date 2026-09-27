@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/content/site";
 import { services } from "@/lib/content/services";
@@ -157,41 +157,57 @@ function CapabilitiesAndIntegrations() {
   ];
 
   return (
-    <section className="section-md bg-white">
-      <div className="container-page">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <AnimatedStagger>
+    <section className="section-md bg-[#f8f8f6]">
+      <div className="container-page overflow-visible">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+          
+          {/* Text Content */}
+          <AnimatedStagger className="flex-1 w-full lg:order-1">
             <AnimatedItem>
-              <h2 className="text-headline mb-6">
+              <span className="eyebrow mb-4">Tailored Architecture</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ink-900 tracking-tight leading-[1.1] mb-6">
                 You can&apos;t run a business on a generic template.
               </h2>
-              <p className="text-body-lg mb-8">
-                Most GoHighLevel implementations fail because they attempt to force a company&apos;s unique operations into a one-size-fits-all snapshot.
+              <p className="text-lg text-gray-500 leading-relaxed mb-10">
+                Most GoHighLevel implementations fail because they attempt to force a company&apos;s unique operations into a one-size-fits-all snapshot. We build from the ground up for how you actually sell.
               </p>
             </AnimatedItem>
-            <AnimatedItem className="grid sm:grid-cols-2 gap-x-6 gap-y-4">
+
+            <AnimatedItem className="grid sm:grid-cols-2 gap-3 md:gap-4">
                {capabilities.map((cap) => (
-                 <div key={cap} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                      <svg className="w-3.5 h-3.5 text-[#1e90ff]" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                 <div key={cap} className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <svg className="w-4 h-4 text-[#1e90ff]" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </div>
-                    <span className="text-[15px] font-medium text-gray-700">{cap}</span>
+                    <span className="text-[14px] font-semibold text-gray-700 leading-tight">{cap}</span>
                  </div>
                ))}
             </AnimatedItem>
           </AnimatedStagger>
           
-          <AnimatedStagger className="relative rounded-xl overflow-hidden aspect-square border border-gray-200 shadow-xl group">
-             <img 
-               src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200" 
-               alt="Integrations"
-               className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
-             />
-             <div className="absolute inset-0 bg-gradient-to-t from-ink-900/90 via-ink-900/40 to-transparent flex flex-col justify-end p-10">
-               <h3 className="text-2xl font-bold text-white mb-2">Connected Ecosystem</h3>
-               <p className="text-gray-200 text-sm">We don&apos;t just build inside GoHighLevel. We connect it to your broader ecosystem using webhooks, Make, Zapier, and native integrations.</p>
+          {/* Image & Floating Card */}
+          <AnimatedStagger className="flex-1 w-full relative lg:order-2">
+             <div className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-gray-200/50">
+               <img 
+                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" 
+                 alt="Integration architecture dashboard"
+                 className="object-cover w-full h-full scale-100 hover:scale-105 transition-transform duration-1000 ease-out"
+               />
+               <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
+             </div>
+             
+             {/* Floating Ecosystem Card */}
+             <div className="absolute -bottom-10 left-4 right-4 md:left-auto md:-right-8 md:w-[380px] bg-white p-6 md:p-8 rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100 z-10 flex flex-col gap-3">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#1e90ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+                </div>
+                <h3 className="text-xl font-bold text-ink-900 tracking-tight">Connected Ecosystem</h3>
+                <p className="text-gray-500 text-sm md:text-base leading-relaxed">
+                  We don&apos;t just build inside GoHighLevel. We connect it to your broader ecosystem using webhooks, Make, Zapier, and native APIs.
+                </p>
              </div>
           </AnimatedStagger>
+          
         </div>
       </div>
     </section>

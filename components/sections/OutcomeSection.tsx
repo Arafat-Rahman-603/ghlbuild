@@ -1,11 +1,11 @@
-﻿import { ghlOutcome } from "@/lib/content/ghl-setup";
+import { ghlOutcome } from "@/lib/content/ghl-setup";
 
 export function OutcomeSection() {
   const { heading, before, after } = ghlOutcome;
 
   return (
     <section
-      className="section-md bg-surface"
+      className="section-md bg-white border-b border-gray-100"
       aria-labelledby="outcome-heading"
     >
       <div className="container-page">

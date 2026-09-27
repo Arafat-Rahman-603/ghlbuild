@@ -121,7 +121,7 @@ export function GhlHero() {
 
   return (
     <section
-      className="pt-16 pb-16 md:pt-24 md:pb-24 bg-white relative overflow-hidden"
+      className="section-md bg-white relative overflow-hidden"
       aria-labelledby="hero-heading"
     >
       <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-50/30 rounded-bl-[120px] -z-10" />

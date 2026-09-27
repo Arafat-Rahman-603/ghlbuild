@@ -14,7 +14,7 @@ const PARTNERS = [
 
 export function HomeTrustedBySection() {
   return (
-    <section className="py-10 border-b border-gray-200 bg-white overflow-hidden relative">
+    <section className="section-md border-b border-gray-200 bg-white overflow-hidden relative">
       <div className="container-page mb-10 flex items-center justify-center gap-4">
         <div className="h-px bg-gray-200 flex-1 max-w-[100px] hidden sm:block"></div>
         <p className="text-center text-sm font-medium tracking-widest text-gray-400 uppercase">

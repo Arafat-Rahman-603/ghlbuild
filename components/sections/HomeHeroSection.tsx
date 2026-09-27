@@ -60,7 +60,7 @@ export function HomeHeroSection() {
   return (
     <>
     <section
-      className="pt-16 md:pt-24 overflow-hidden relative"
+      className="section-md overflow-hidden relative"
       style={{ backgroundColor: "#f8f8f6" }}
       aria-labelledby="home-hero-heading"
     >
@@ -138,42 +138,42 @@ export function HomeHeroSection() {
       </div>
     </section>
      
-    <section className="pt-8 pb-8 bg-white overflow-hidden relative border-b border-gray-200">
+    <section className="section-md bg-white overflow-hidden relative border-b border-gray-200">
       <div className="container-page flex flex-col items-center gap-10">
         
         {/* Top Row: Review Badges */}
-        <div className="flex flex-wrap justify-center items-center gap-5">
+        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-5">
           
           {/* Trustpilot */}
-          <div className="flex items-center gap-3.5 bg-white border border-gray-200 shadow-sm px-6 py-3.5 rounded-xl">
-            <svg viewBox="0 0 24 24" className="w-7 h-7 text-[#00b67a] fill-current" aria-hidden="true">
+          <div className="flex items-center gap-3 bg-[#00b67a] shadow-sm px-5 py-2.5 rounded-xl hover:-translate-y-1 transition-transform cursor-default">
+            <svg viewBox="0 0 24 24" className="w-8 h-8 text-white fill-current" aria-hidden="true">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
-            <div className="flex flex-col">
-              <span className="text-[11px] text-gray-500 font-medium">Excellent 4.9/5</span>
-              <span className="font-bold text-sm text-ink-900">Trustpilot</span>
+            <div className="flex flex-col text-left">
+              <span className="text-[10px] sm:text-[11px] text-white/90 font-medium">Excellent | 4.9 out of 5</span>
+              <span className="font-bold text-sm sm:text-base text-white leading-tight">Trustpilot</span>
             </div>
           </div>
 
           {/* Google Review */}
-          <div className="flex items-center gap-3.5 bg-white border border-gray-200 shadow-sm px-6 py-3.5 rounded-xl">
-            <svg viewBox="0 0 24 24" className="w-7 h-7 text-[#fbbc05] fill-current" aria-hidden="true">
+          <div className="flex items-center gap-3 bg-[#4285F4] shadow-sm px-5 py-2.5 rounded-xl hover:-translate-y-1 transition-transform cursor-default">
+            <svg viewBox="0 0 24 24" className="w-8 h-8 text-white fill-current" aria-hidden="true">
               <path d="M21.35 11.1H12v2.77h5.44c-.25 1.4-1.55 4.12-5.44 4.12-3.28 0-5.95-2.73-5.95-6.1s2.67-6.1 5.95-6.1c1.86 0 3.19.8 3.92 1.49l2.21-2.14C16.54 3.75 14.47 2.9 12 2.9 6.98 2.9 2.9 6.98 2.9 12s4.08 9.1 9.1 9.1c5.25 0 8.73-3.69 8.73-8.89 0-.75-.1-1.39-.23-1.93z" />
             </svg>
-            <div className="flex flex-col">
-              <span className="text-[11px] text-gray-500 font-medium">Excellent 4.8/5</span>
-              <span className="font-bold text-sm text-ink-900">Google</span>
+            <div className="flex flex-col text-left">
+              <span className="text-[10px] sm:text-[11px] text-white/90 font-medium">Excellent | 4.8 out of 5</span>
+              <span className="font-bold text-sm sm:text-base text-white leading-tight">Google</span>
             </div>
           </div>
 
-          {/* Clutch Review */}
-          <div className="flex items-center gap-3.5 bg-white border border-gray-200 shadow-sm px-6 py-3.5 rounded-xl">
-            <svg viewBox="0 0 24 24" className="w-7 h-7 text-[#ff3a2d] fill-current" aria-hidden="true">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 17.5c-4.14 0-7.5-3.36-7.5-7.5S7.86 4.5 12 4.5s7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5zm-1.5-4h3v-2h-3v2zm0-4h3V8h-3v3z" />
+          {/* Fiverr Review */}
+          <div className="flex items-center gap-3 bg-[#1dbf73] shadow-sm px-5 py-2.5 rounded-xl hover:-translate-y-1 transition-transform cursor-default">
+            <svg viewBox="0 0 24 24" className="w-8 h-8 text-white fill-current" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
-            <div className="flex flex-col">
-              <span className="text-[11px] text-gray-500 font-medium">Excellent 4.8/5</span>
-              <span className="font-bold text-sm text-ink-900">Clutch</span>
+            <div className="flex flex-col text-left">
+              <span className="text-[10px] sm:text-[11px] text-white/90 font-medium">Excellent | 5.0 out of 5</span>
+              <span className="font-bold text-sm sm:text-base text-white leading-tight">Fiverr</span>
             </div>
           </div>
 

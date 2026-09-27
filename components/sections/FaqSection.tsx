@@ -9,17 +9,17 @@ export function FaqSection() {
       id="faq"
     >
       <div className="container-page">
-        <div className="grid lg:grid-cols-[360px_1fr] gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-[450px_1fr] gap-10 lg:gap-16 items-start">
           {/* Left */}
-          <div className="lg:sticky lg:top-24 lg:self-start">
-            <span className="eyebrow mb-3 block w-fit">FAQ</span>
-            <h2 id="faq-heading" className="text-headline mb-4">
+          <div className="lg:sticky lg:top-32 lg:self-start pr-4">
+            <span className="eyebrow mb-4 block w-fit">FAQ</span>
+            <h2 id="faq-heading" className="text-3xl md:text-4xl font-bold tracking-tight text-ink-900 leading-[1.1] mb-6">
               Common questions about the implementation.
             </h2>
-            {/* <p className="text-body text-gray-500">
+            <p className="text-lg text-gray-500 leading-relaxed">
               If your question isn&apos;t covered here, get in touch and we&apos;ll give
               you a direct answer.
-            </p> */}
+            </p>
           </div>
 
           {/* Right: accordion */}

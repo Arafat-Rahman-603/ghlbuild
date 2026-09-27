@@ -153,23 +153,14 @@ function HomeProcess() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-white" aria-labelledby="home-process-heading">
+    <section className="section-md bg-white" aria-labelledby="home-process-heading">
       <div className="container-page">
-        {/* Editorial Header */}
-        <div className="mb-12 md:mb-16 md:max-w-3xl mx-auto text-center">
-          <span className="eyebrow mb-4 block">
-            How We Work
-          </span>
-          <h2
-            id="home-process-heading"
-            className="text-headline mb-8"
-          >
-            A structured implementation process.
-          </h2>
-          {/* <p className="text-body-lg text-gray-500">
-            Every engagement follows the same disciplined method — scoped to your business, executed systematically.
-          </p> */}
-        </div>
+        <SectionHeading
+          eyebrow="How We Work"
+          heading="A structured implementation process."
+          align="center"
+          className="mb-12"
+        />
 
         {/* Desktop Horizontal Journey */}
         <AnimatedStagger className="hidden lg:flex justify-between relative">
@@ -395,9 +386,8 @@ function HomeFaqSection() {
         <SectionHeading
           eyebrow="FAQ"
           heading="Common questions about our setup service."
-          // subheading="If your question isn't covered here, book a strategy call and we'll be happy to answer it directly."
           align="center"
-          className="mb-8 lg:text-center"
+          className="mb-12 lg:text-center"
         />
         <div className="w-full mt-8">
           <Accordion items={faqs} />
@@ -442,16 +432,13 @@ function HomeTestimonials() {
   return (
     <section className="section-md border-b border-gray-200 overflow-hidden" style={{ backgroundColor: "#f5f4f0" }} aria-labelledby="home-testimonials-heading">
       <div className="container-page">
-        <div className="mb-4 md:mb-4 flex flex-col items-center">
-          <SectionHeading
-            eyebrow="CLIENT SUCCESS"
-            heading="Systems that drive real business results."
-            // subheading="Don't just take our word for it. Here's what business leaders say about our implementation process."
-            align="center"
-            className="mb-0"
-            headingClassName="tracking-tight"
-          />
-        </div>
+        <SectionHeading
+          eyebrow="CLIENT SUCCESS"
+          heading="Systems that drive real business results."
+          align="center"
+          className="mb-12"
+          headingClassName="tracking-tight"
+        />
         <div className="w-full">
           <TestimonialCarousel testimonials={testimonials} />
         </div>

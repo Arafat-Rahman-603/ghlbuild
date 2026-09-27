@@ -17,6 +17,7 @@ const caseStudies = [
     industry: "Real Estate",
     productsUsed: "GHL Pipelines, SMS Workflows, Zapier",
     heroImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1400",
+    heroVideo: "https://www.youtube.com/embed/y2-fP6LiIa8",
     challengeImage: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800",
     approachImage: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
     challenge: "Clearly Managing 500+ Monthly Inbound Leads",
@@ -53,6 +54,7 @@ const caseStudies = [
     industry: "Professional Services",
     productsUsed: "GHL Calendars, WhatsApp, Email",
     heroImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1400",
+    heroVideo: "https://www.youtube.com/embed/y2-fP6LiIa8",
     challengeImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
     approachImage: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=800",
     challenge: "Clients Booking But Not Showing Up",
@@ -89,6 +91,7 @@ const caseStudies = [
     industry: "Home Services",
     productsUsed: "GHL CRM, Email Campaigns, Automations",
     heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1400",
+    heroVideo: "https://www.youtube.com/embed/y2-fP6LiIa8",
     challengeImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
     approachImage: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=800",
     challenge: "5 Disconnected Tools Causing Data Chaos",
@@ -133,30 +136,43 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ sl
 
   return (
     <>
-      {/* ── HERO IMAGE ─────────────────────────────────────────────────────── */}
-      <section className="relative w-full h-[360px] md:h-[480px] lg:h-[560px] bg-ink-900">
-        <Image
-          src={study.heroImage}
-          alt={study.title}
-          fill
-          className="object-cover opacity-70"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-ink-900/30 to-transparent" />
-      </section>
-
-      {/* ── TITLE + META ───────────────────────────────────────────────────── */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="container-page py-10 md:py-14">
+      {/* ── HERO MEDIA ─────────────────────────────────────────────────────── */}
+      <section className="pt-8 md:pt-12 bg-white">
+        <div className="container-page">
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-[#1e90ff] mb-8 transition-colors group"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-[#1e90ff] mb-6 transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Case Studies
           </Link>
 
+          <div className="relative w-full h-[360px] md:h-[480px] lg:h-[560px] bg-ink-900 rounded-2xl md:rounded-[32px] overflow-hidden shadow-lg border border-gray-100">
+            {study.heroVideo ? (
+              <iframe
+                src={`${study.heroVideo}?autoplay=1&mute=1&loop=1&playlist=y2-fP6LiIa8&controls=0&showinfo=0&rel=0`}
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="w-full h-full object-cover border-0"
+              />
+            ) : (
+              <Image
+                src={study.heroImage}
+                alt={study.title}
+                fill
+                className="object-cover opacity-70"
+                priority
+                sizes="(max-width: 1200px) 100vw, 1200px"
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-ink-900/20 to-transparent pointer-events-none" />
+          </div>
+        </div>
+      </section>
+
+      {/* ── TITLE + META ───────────────────────────────────────────────────── */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="container-page py-10 md:py-14">
           <h1 className="text-headline max-w-3xl mb-4">{study.title}</h1>
           <p className="text-body-lg text-gray-500 max-w-2xl mb-10">{study.subtitle}</p>
 

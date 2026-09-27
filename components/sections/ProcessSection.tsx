@@ -1,9 +1,9 @@
-﻿import { ghlProcess } from "@/lib/content/ghl-setup";
+import { ghlProcess } from "@/lib/content/ghl-setup";
 
 export function ProcessSection() {
   return (
     <section
-      className="py-24 md:py-32 bg-surface overflow-hidden"
+      className="section-md bg-[#f8f8f6] overflow-hidden"
       aria-labelledby="process-heading"
       id="process"
     >

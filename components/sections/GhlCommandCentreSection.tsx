@@ -43,7 +43,7 @@ export function GhlCommandCentreSection() {
     <>
       <section
         ref={containerRef}
-        className="py-4 md:py-4 border-b border-gray-200 overflow-hidden relative"
+        className="section-md border-b border-gray-200 overflow-hidden relative"
         style={{ backgroundColor: "#f5f4f0" }}
         aria-labelledby="command-centre-heading"
       >
@@ -255,7 +255,7 @@ export function GhlCommandCentreSection() {
       {/* ── Editorial Metrics Composition ──────────────────────────────────── */}
       </section>
 
-      <section className="bg-white py-8 md:py-10 border-b border-gray-200">
+      <section className="section-md bg-white border-b border-gray-200">
         <div className="container-page max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 15 }}

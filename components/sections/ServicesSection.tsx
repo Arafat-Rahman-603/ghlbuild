@@ -7,6 +7,7 @@ import React, {
   useState,
 } from "react";
 import Link from "next/link";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import {
   ArrowLeft,
   ArrowRight,
@@ -457,31 +458,25 @@ export function ServicesSection() {
   return (
     <section
       aria-labelledby="services-heading"
-      className="bg-[#f5f4f0] py-14 md:py-16"
+      className="bg-[#f5f4f0] section-md border-b border-gray-200"
     >
       {/* --------------------------------------------
           Header
       -------------------------------------------- */}
 
-      <div className="container-page flex flex-col items-center text-center">
-        <div className="mb-9 md:mb-12 max-w-[680px]">
-          <span className="eyebrow mb-3 block text-[#1b6ef3]">
-            Our Services
-          </span>
-          <h2
-            id="services-heading"
-            className="text-3xl md:text-4xl font-bold tracking-tight m-0 text-ink-900"
-          >
-            Everything you need to grow with GoHighLevel.
-          </h2>
-          {/* <p className="m-0 max-w-[480px] mx-auto mt-4 text-[16px] leading-[1.6] text-gray-500">
-            One team across the whole stack — CRM,
-            automations, funnels, and integrations — so
-            nothing lands in the gap between two freelancers.
-            Every workflow is tested against your real sales
-            process.
-          </p> */}
-        </div>
+      <div className="container-page">
+        <SectionHeading
+          eyebrow="OUR SERVICES"
+          heading="Everything you need to grow with GoHighLevel."
+          align="center" 
+
+
+
+
+
+          
+          className="mb-4 md:mb-4"
+        />
       </div>
 
       {/* --------------------------------------------
@@ -578,7 +573,7 @@ export function ServicesSection() {
       <div
         className="relative hidden md:block"
         style={{
-          height: 460,
+          height: 380,
           perspective: 1400,
         }}
         tabIndex={0}
