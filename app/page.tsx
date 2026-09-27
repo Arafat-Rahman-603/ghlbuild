@@ -109,12 +109,11 @@ function GhlCapabilitySection() {
   ];
 
   return (
-    <section className="section-md border-b border-gray-200" style={{ backgroundColor: "#f5f4f0" }} aria-labelledby="ghl-cap-heading">
+    <section className="section-md border-b border-gray-200 bg-surface" aria-labelledby="ghl-cap-heading">
       <div className="container-page">
         <SectionHeading
           eyebrow="GOHIGHLEVEL"
           heading="The complete GoHighLevel implementation."
-          // subheading="GoHighLevel works best when every system is configured correctly and connected. We implement the platform end-to-end — not feature by feature in isolation."
           align="center"
           className="mb-12"
         />
@@ -285,7 +284,6 @@ function HomePricingSection() {
         <SectionHeading
           eyebrow="Pricing"
           heading="Transparent pricing for professional implementation."
-          // subheading="Choose the level of implementation that matches your business complexity. No hidden fees or ongoing retainers required."
           align="center"
           className="mb-12 lg:text-center"
         />
@@ -430,7 +428,7 @@ function HomeTestimonials() {
   ];
 
   return (
-    <section className="section-md border-b border-gray-200 overflow-hidden" style={{ backgroundColor: "#f5f4f0" }} aria-labelledby="home-testimonials-heading">
+    <section className="section-md border-b border-gray-200 overflow-hidden bg-surface" aria-labelledby="home-testimonials-heading">
       <div className="container-page">
         <SectionHeading
           eyebrow="CLIENT SUCCESS"

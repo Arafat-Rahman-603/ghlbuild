@@ -3,26 +3,34 @@
 /* ─── Design Tokens ────────────────────────────────────────────────────────── */
 @theme inline {
   /* Typography */
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-serif), "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: var(--font-inter);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-sans);
+  --font-mono: var(--font-sans);
 
-  /* Color System */
-  --color-ink-900: #0a0a0a;
-  --color-ink-800: #111111;
-  --color-ink-700: #1a1a1a;
-  --color-ink-600: #2d2d2d;
-  --color-ink-500: #3d3d3d;
-  --color-gray-400: #6b7280;
-  --color-gray-300: #9ca3af;
-  --color-gray-200: #e5e7eb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-50: #f9fafb;
-  --color-surface: #f8f8f6;
+  /* Brand Color System */
+  --color-signal-blue: #2897FC;
+  --color-deep-navy: #10243A;
+  --color-ice-blue: #EAF4FF;
+  --color-action-blue: #1268B3;
+  --color-secondary-text: #526578;
+
+  /* Color System Mapping */
+  --color-ink-900: var(--color-deep-navy);
+  --color-ink-800: #0a1726;
+  --color-ink-700: #10243A;
+  --color-ink-600: var(--color-secondary-text);
+  --color-ink-500: var(--color-secondary-text);
+  --color-gray-600: var(--color-secondary-text);
+  --color-gray-400: #7b8a9c;
+  --color-gray-300: #93a5b8;
+  --color-gray-200: #d6e2f0;
+  --color-gray-100: #eaf4ff;
+  --color-gray-50: #f5f9ff;
+  --color-surface: var(--color-ice-blue);
   --color-white: #ffffff;
-  --color-accent: #1e90ff;
-  --color-accent-hover: #1873cc;
-  --color-accent-muted: #e6f2ff;
+  --color-accent: var(--color-signal-blue);
+  --color-accent-hover: var(--color-action-blue);
+  --color-accent-muted: var(--color-ice-blue);
   --color-accent-border: #99ccff;
   --color-border: #e5e7eb;
   --color-border-strong: #d1d5db;
@@ -43,8 +51,8 @@ html {
 
 body {
   background-color: #ffffff;
-  color: #0a0a0a;
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  color: var(--color-secondary-text);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   line-height: 1.6;
 }
 
@@ -134,13 +142,13 @@ body {
   }
 
   .font-number {
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-sans), sans-serif;
     font-variant-numeric: tabular-nums;
   }
 
   .font-serif,
   .font-editorial {
-    font-family: var(--font-serif), "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--font-sans), sans-serif;
   }
 }
 
@@ -193,7 +201,7 @@ body {
 
 /* ─── Surface variants ──────────────────────────────────────────────────────── */
 .bg-surface {
-  background-color: #f8f8f6;
+  background-color: var(--color-ice-blue);
 }
 
 .bg-white {
@@ -259,45 +267,45 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--color-accent);
+  background-color: var(--color-action-blue);
   color: #ffffff;
-  box-shadow: 3px 3px 0 0 var(--color-accent-hover);
+  box-shadow: 3px 3px 0 0 var(--color-deep-navy);
 }
 
 .btn-primary:hover {
-  background-color: #339cff;
-  box-shadow: 4px 4px 0 0 var(--color-accent-hover);
+  background-color: #0d4e87;
+  box-shadow: 4px 4px 0 0 var(--color-deep-navy);
   transform: translate(-1px, -1px);
 }
 
 .btn-accent {
-  background-color: #0a0a0a;
+  background-color: var(--color-deep-navy);
   color: #ffffff;
-  box-shadow: 3px 3px 0 0 #3d3d3d;
+  box-shadow: 3px 3px 0 0 #0a1726;
 }
 
 .btn-accent:hover {
-  background-color: #1a1a1a;
-  box-shadow: 4px 4px 0 0 #3d3d3d;
+  background-color: #0a1726;
+  box-shadow: 4px 4px 0 0 #000000;
   transform: translate(-1px, -1px);
 }
 
 .btn-outline {
   background-color: #ffffff;
-  color: #0a0a0a;
-  border: 1px solid #e5e7eb;
-  box-shadow: 3px 3px 0 0 #e5e7eb;
+  color: var(--color-deep-navy);
+  border: 1px solid var(--color-deep-navy);
+  box-shadow: 3px 3px 0 0 var(--color-deep-navy);
 }
 
 .btn-outline:hover {
-  background-color: #f9fafb;
-  box-shadow: 4px 4px 0 0 #d1d5db;
+  background-color: var(--color-ice-blue);
+  box-shadow: 4px 4px 0 0 var(--color-deep-navy);
   transform: translate(-1px, -1px);
 }
 
 .btn-ghost {
   background-color: transparent;
-  color: #3d3d3d;
+  color: var(--color-deep-navy);
   box-shadow: none;
 }
 

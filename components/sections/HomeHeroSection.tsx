@@ -60,12 +60,11 @@ export function HomeHeroSection() {
   return (
     <>
     <section
-      className="section-md overflow-hidden relative"
-      style={{ backgroundColor: "#f8f8f6" }}
+      className="section-md overflow-hidden relative bg-white"
       aria-labelledby="home-hero-heading"
     >
       {/* Subtle ambient glow behind text */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#1e90ff] opacity-[0.04] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[800px] h-[400px] bg-[#2897FC] opacity-[0.03] blur-[120px] rounded-full pointer-events-none" />
       <div className="container-page">
         <motion.div
           initial="hidden"
@@ -78,30 +77,29 @@ export function HomeHeroSection() {
           <motion.h1
             variants={itemVariants}
             id="home-hero-heading"
-            className="text-display max-w-[820px] mb-4"
+            className="text-display max-w-[820px] mb-4 text-ink-900"
           >
             Hire GoHighLevel{" "}
-            {/* Highlighted word — blue background, editorial treatment */}
+            {/* Highlighted word — brand color background, editorial treatment */}
             <span className="relative inline-block">
               <span
                 aria-hidden="true"
                 className="absolute rounded"
                 style={{
                   inset: "4px -6px 0px -6px",
-                  backgroundColor: "#1e90ff",
+                  backgroundColor: "#2897FC",
                   opacity: 0.15,
                   borderRadius: "6px",
                   zIndex: 0,
                 }}
               />
-              <span className="relative text-[#1e90ff]" style={{ zIndex: 1 }}>experts</span>
+              <span className="relative text-[#2897FC]" style={{ zIndex: 1 }}>experts</span>
             </span>{" "}
             who can turn{" "}
             <br className="hidden sm:block" />
-            your CRM into booked calls
+            your CRM into booked calls.
           </motion.h1>
 
-          {/* Subheading */}
           {/* 
           <motion.p
             variants={itemVariants}
