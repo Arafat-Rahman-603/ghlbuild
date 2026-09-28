@@ -21,7 +21,7 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="inline-flex items-center group">
               <span className="flex items-center">
-                <img src="/logo.png" alt={`${site.name} logo`} className="h-12 md:h-14 w-auto object-contain brightness-0 invert" />
+                <img src="/footer-logo.png" alt={`${site.name} logo`} className="h-12 md:h-14 w-auto object-contain " />
               </span>
             </Link>
 

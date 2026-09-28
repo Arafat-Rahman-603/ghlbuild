@@ -60,7 +60,7 @@ export function HomeHeroSection() {
   return (
     <>
     <section
-      className="section-md overflow-hidden relative bg-white"
+      className="pt-16 md:pt-24 pb-4 md:pb-8 overflow-hidden relative bg-white"
       aria-labelledby="home-hero-heading"
     >
       {/* Subtle ambient glow behind text */}
@@ -114,7 +114,7 @@ export function HomeHeroSection() {
           {/* CTAs — pill-shaped buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-3 mb-8 mt-4"
+            className="flex flex-wrap justify-center gap-3 mb-4 mt-4"
           >
             <Link
               href={site.cta.bookCall}
@@ -136,7 +136,7 @@ export function HomeHeroSection() {
       </div>
     </section>
      
-    <section className="section-md bg-white overflow-hidden relative border-b border-gray-200">
+    <section className="pt-8 md:pt-12 pb-12 md:pb-16 bg-white overflow-hidden relative border-b border-gray-200">
       <div className="container-page flex flex-col items-center gap-10">
         
         {/* Top Row: Review Badges */}
